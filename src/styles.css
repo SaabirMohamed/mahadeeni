@@ -1,1 +1,79 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+
+body { margin: 0; }
+.page {
+    position: fixed;
+    display: grid;
+    z-index: 11;
+    width: 100%;
+    grid-column: 1fr 1fr 1fr;
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .2);
+    top: 40px;
+
+}
+
+.material-icons {
+    padding-top: 7px;
+}
+.navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    opacity: 1;
+    }
+
+.navigation button {
+           opacity: 1;
+           z-index: 11;
+           box-shadow: 0px 3px 5px rgba(0, 0, 0, .5) !important;
+           padding-bottom: 20px;
+        }
+
+
+
+.outlet {
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+    background: transparent;
+    width: 100%;
+    opacity: 1;
+    z-index: 9;
+    margin: 4.1em 0em;
+    height: 100%;
+    
+    
+}
+
+
+.background {
+    position: fixed;
+    /* background-color: transparent; */
+    
+    top:0;
+    margin: 0;
+    z-index: 8;
+
+    
+}
+
+.background > video {
+    position: fixed;
+    top: 0;
+    
+    
+
+    
+}
+
+.mat-toolbar.mat-primary {
+    background: transparent !important;
+    color: black;
+    opacity: 0.4;
+}
+body { margin: 0; }

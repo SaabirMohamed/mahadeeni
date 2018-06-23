@@ -1,7 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {ErrorpageComponent} from './errorpage/errorpage.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: 'home', loadChildren: './modules/home/home.module#HomeModule'},
+  {path: 'contact', loadChildren: './modules/contact/contact.module#ContactModule'},
+  {path: 'about', loadChildren: './modules/about/about.module#AboutModule'},
+  {path: 'events', loadChildren: './modules/events/events.module#EventsModule'},
+  {path: 'posts', loadChildren: './modules/posts/posts.module#PostsModule'},
+  {path: 'gallery', loadChildren: './modules/gallery/gallery.module#GalleryModule'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'error', component: ErrorpageComponent},
+  {path: '**', redirectTo: 'error', pathMatch: 'full'}
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
