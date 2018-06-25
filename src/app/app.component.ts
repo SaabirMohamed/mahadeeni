@@ -7,11 +7,12 @@ import { Component} from '@angular/core';
 })
 export class AppComponent {
   base_path = '../assets/vidbg/';
-  currentbg = '';
+  currentbg = 'about';
   bgextension = '.mp4';
   bg = this.base_path + this.currentbg + this.bgextension;
 
   bgChanger(e) {
+    
     this.bg = this.base_path + e + this.bgextension;
   }
 

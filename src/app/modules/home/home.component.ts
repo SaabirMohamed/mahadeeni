@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
+ 
   pageTitle = 'Welcome to Mahadeeni';
   pageSubTitle = 'Building community, Uniting the Ummah toward education';
   pageImageUrl = '../assets/icon-256x256.png';
@@ -29,5 +30,10 @@ export class HomeComponent implements OnInit {
         console.log(this.bannerimage);
               } else { this.bannerimage = this.bannerimages[0]; this.bannerimage = this.bannerimages[0]; }
       }, 5000);
+  }
+  
+  ngOnDestroy(): void {
+    clearInterval(this.interval);
+
   }
 }

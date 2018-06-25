@@ -25,8 +25,9 @@ a {
 
 nav {
   /* background-color: #c74a73; */
-  background-color: transparent;
+  background-color: #fff;
   box-shadow: 0px 1px 20px #ccc;
+  opacity: .8;
 }
 nav .container {
   padding: 0 10px;
@@ -51,8 +52,22 @@ nav ul li a {
   font-family: 'Roboto', sans-serif;
 }
 nav ul li a:hover, nav ul li a:focus {
-  background: #832846;
+  /* background: #832846; */
+  background: lightblue;
+  color: black !important;
 }
 nav ul li a:active {
   border: 2px solid #0B6623;
+}
+
+.logo {
+  background-color: #fff;
+  width: 90px;
+  border-radius: 80px;
+  box-shadow: 1px 1px 5px #ccc; 
+  padding:10px;
+  margin:0px;
+  transform: translate(5px,10px);
+  float: left;
+  opacity: .9;
 }

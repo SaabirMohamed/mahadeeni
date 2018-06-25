@@ -132,21 +132,27 @@
   
   .page-header {
     background-color: transparent;
+    
   }
   
   .page-title {
-    color: #666;
+    color: #777;
     margin-left: auto;
     margin-right: auto;
-    max-width: 50rem;
+    
+    width: 70%;
     padding: 1rem;
+    margin-bottom: 5px;
+    
   }
   
   main {
     margin-left: auto;
     margin-right: auto;
-    max-width: 50rem;
+    /* max-width: 50rem; */
     padding: 1rem;
+    width: 70%;
+    background-color: rgba(255, 255,255, .7)
   }
   
   .section-title {
@@ -196,6 +202,7 @@
     color: #338899;
   }
   
+  
   h1,
   h2,
   h3,
@@ -204,12 +211,33 @@
   h6 {
     color: #3d525c;
     margin: 0;
+    padding: 10px;
+    box-shadow: 0px 4px 3px #ccc;
+    background-color: rgba(255, 255,255, .7);
+    /* font-family: Shrikhand; */
+    font-weight: lighter;
+    font-family: Roboto;
+    
   }
   
   p {
     margin: 15px;
     padding: 12px;
-    border-top: 1px solid rgba(0, 0,0, .5);
-    box-shadow: 0px 1px 20px #ccc;
+    border-top: 1px solid rgba(0, 0,0, .3);
+    box-shadow: 0px 1px 20px #000;
+    background-color: #ddd;
+    font-family: Roboto;
 
+  }
+
+  p::before {
+    position: relative;
+    
+    content: '.';
+    width: 10px;
+    padding: 2px;
+    background-color: rgba(0, 0,0, .5);
+    border-radius:0px;
+    margin:20px;
+    color:  transparent;
   }

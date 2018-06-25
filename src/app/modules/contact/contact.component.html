@@ -1,54 +1,83 @@
 <div class="contain">
-
+  
+    
+  
   <div class="wrapper">
     <div class="contacts">
-      <h3>Our contact Details</h3>
+      <h3>Address Details</h3>
 
       <ul>
         <li>871 Arcadia Street Arcadia Pretoria</li>
         <li>+27 12 342 1452 or 082 827 8889</li>
         <li>info@mahadeeni.co.za</li>
       </ul>
+    <hr><hr>
+      <div class="banking">
+        <h3>Banking Details</h3>
+    
+        <ul>
+            <li>FOR DONATIONS EFT OR DIRECT</li>
+           <li> Account number	- 62739549204 -	رقم حساب</li>
+            <li>Bank name	- FIRST NATIONAL BANK (FNB) -	اسم البنك</li>
+            <li>swift code - FIRNZAJJXXX -	رقم التحويل من الخارج</li>
+          
+        </ul>
+      </div>
+      <div class="map" id="map">
+        <ul>
+           <li>
+              <img src="../../../assets/mapsmall.png" alt="">
+           </li>
+          
+        </ul>
+      </div>
+      
     </div>
     
-
+   
     <div class="form">
-      <h3>Send us a message</h3>
-      <form action="">
+        <p class="thanks" *ngIf="loader">
+            SENDING MESSAGE...
+          </p>
+      <div class="error" *ngIf="result">
+            Result: {{ result | json }}
+            <div class="thanks">
+              <br>
+              Thank you for your Enquiry, We will get back to you shortly.
+            </div>
+      </div>
+      <div class="formarea" *ngIf="!result && !loader">
+      <h3>Enquiries</h3>
+      <form>
         <p>
           <label for="">Your name</label>
-          <input type="text">
+          <input maxlength="50" placeholder="First name" name="n" #n type="text">
         </p>
         <p>
-          <label for="number">number</label>
-          <input type="text">
+          <label for="number">Contact Number</label>
+          <input maxlength="12" placeholder=" +27123456789" name="number" #num type="text">
         </p>
         <p>
           <label for="">Email Address</label>
-          <input type="text">
+          <input maxlength="40" placeholder="someone@somewhere.com" name="em" #em type="text">
         </p>
         <p>
           <label for="">Subject</label>
-          <input type="text">
+          <input maxlength="40" placeholder="Specify a topic or subject" name="s" #s type="text">
         </p>
         <p class="full-width">
-          <label for="">Write your message</label>
-          <textarea name="" id="" cols="30" rows="7"></textarea>
+          <label for="">message</label>
+          <textarea maxlength="255" placeholder="A short message..." name="message" #m id="message" cols="30" rows="7"></textarea>
         </p>
-        <p class="full-width">
-          <button>Send</button>
+        <p *ngIf="!loader" class="full-width">
+          <a class="mybtn"  (click)="onSubmit(n.value,num.value,em.value,s.value,m.value)">Send</a>
         </p>
+        
       </form>
+    </div>
     </div>
   </div>
 </div>
-<div class="banking">
-    <h3>Banking Details</h3>
+<div class="map">
 
-    <ul>
-       <li> Account number	- 62739549204 -	رقم حساب</li>
-        <li>Bank name	- FIRST NATIONAL BANK (FNB) -	اسم البنك</li>
-        <li>swift code - FIRNZAJJXXX -	رقم التحويل من الخارج</li>
-      
-    </ul>
-  </div>
+</div>
