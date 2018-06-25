@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceService } from '../../services/service.service';
 import { AgmCoreModule } from '@agm/core';
-
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatTableModule, MatFormFieldModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { EvtableComponent } from './evtable/evtable.component';
 
 
 
@@ -11,10 +12,11 @@ import { AgmCoreModule } from '@agm/core';
   imports: [
     CommonModule,
     HttpClientModule,
-    AgmCoreModule
+    AgmCoreModule,MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule,
+    MatTableModule,MatFormFieldModule, MatPaginatorModule, MatSortModule
   ],
-  declarations: [],
-  exports: [HttpClientModule,AgmCoreModule],
+  declarations: [EvtableComponent],
+  exports: [HttpClientModule,AgmCoreModule, MatFormFieldModule, EvtableComponent],
   providers:[ServiceService]
 })
 export class GlobalsharedModule {}

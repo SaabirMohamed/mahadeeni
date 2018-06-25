@@ -17,7 +17,7 @@ export class NaviComponent {
     );
 
   clicker(bgname) {
-    console.log('fire event for ' + bgname);
+    // console.log('bg ' + bgname + '.mp4');
       this.bgchange.emit(bgname);
   }
 

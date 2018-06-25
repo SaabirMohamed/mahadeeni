@@ -9,6 +9,7 @@ const routes: Routes = [
   {path: 'events', loadChildren: './modules/events/events.module#EventsModule'},
   {path: 'posts', loadChildren: './modules/posts/posts.module#PostsModule'},
   {path: 'gallery', loadChildren: './modules/gallery/gallery.module#GalleryModule'},
+  {path: 'counselling', loadChildren: './modules/counselling/counselling.module#CounsellingModule'},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'error', component: ErrorpageComponent},
   {path: '**', redirectTo: 'error', pathMatch: 'full'}

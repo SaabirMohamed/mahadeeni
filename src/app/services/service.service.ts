@@ -9,9 +9,11 @@ import { Ipost } from './posts.model';
 })
 export class ServiceService {
  
+  images: Observable<any>;
   result: Observable<any>;
+  getresult: Observable<Iimage[]>;
   api = 'https://www.mahadeeni.co.za/assets/api.php';
- 
+  myevent: Ievent[];
   constructor(private http: HttpClient) { }
 
   // returns an observble of the response from the server.
@@ -30,11 +32,32 @@ export class ServiceService {
     return this.result;
   }
 
+  getEvents() {
+      return {
+        name:'test',
+        desc:'test',
+        eventdate:'test',
+        eventenddate:'test',
+      }
+    }
 
+  GetAllImages() {
+    
+     return this.http.get<Observable<Iimage[]>>('https://mahadeeni.co.za/assets/images.php');
+        
+  }
+  }
 
+export interface Iimage {
+    id:string;
+    name: string;
 }
-
-
+export interface Ievent {
+    name: string;
+    desc: string;
+    eventdate: string;
+    eventenddate: string
+}
 
 
 

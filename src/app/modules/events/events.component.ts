@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ServiceService } from '../../services/service.service';
+import {MatTableDataSource, MatFormField, MatPaginator, MatSort} from '@angular/material';
+
+
+/**
+ * @title Table with filtering
+ */
 
 @Component({
   selector: 'app-events',
@@ -6,10 +13,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(private svc: ServiceService) { }
 
   ngOnInit() {
+    
   }
 
+
 }
+

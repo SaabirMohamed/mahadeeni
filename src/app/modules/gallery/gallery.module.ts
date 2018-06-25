@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { GalleryRoutingModule } from './gallery-routing.module';
 import { GalleryComponent } from './gallery.component';
+import { GlobalsharedModule } from '../../shared/globalshared/globalshared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    GalleryRoutingModule
+    GalleryRoutingModule,
+    GlobalsharedModule
   ],
   declarations: [GalleryComponent]
 })
