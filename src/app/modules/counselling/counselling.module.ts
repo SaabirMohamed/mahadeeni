@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { CounsellingRoutingModule } from './counselling-routing.module';
 import { CounsellingComponent } from './counselling.component';
 import { GlobalsharedModule } from '../../shared/globalshared/globalshared.module';
+import { AppointmentformComponent } from './components/appointmentform/appointmentform.component';
+import { AnonformComponent } from './components/anonform/anonform.component';
 
 @NgModule({
   imports: [
@@ -11,6 +13,6 @@ import { GlobalsharedModule } from '../../shared/globalshared/globalshared.modul
     CounsellingRoutingModule,
     GlobalsharedModule
   ],
-  declarations: [CounsellingComponent]
+  declarations: [CounsellingComponent, AppointmentformComponent, AnonformComponent]
 })
 export class CounsellingModule { }

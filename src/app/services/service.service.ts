@@ -51,23 +51,23 @@ export class ServiceService {
   }
 
 
-  createAppointment(pldtxt): Observable<any> {
-    // const pld = '?name='+n+'&num='+num+'&em='+em+'&subject='+s+'&message='+m;
-    console.log('?fname=' + pldtxt.fname + '&lname=' + pldtxt.lname + '&em=' + pldtxt.em + '&tel=' + pldtxt.tel + '&bdate=' + pldtxt.adate + '&age=' + pldtxt.age + '&adate=' + pldtxt.adate + '&attendees=' + pldtxt.attendees);
-    const pld = '?fname=' + pldtxt.fname + '&lname=' + pldtxt.lname + '&em=' + pldtxt.em + '&tel=' + pldtxt.tel + '&bdate=' + pldtxt.adate + '&age=' + pldtxt.age + '&adate=' + pldtxt.adate + '&attendees=' + pldtxt.attendees;
+  createAppointment(fname,lname,em,tel,bdate,age,adate,attendees): Observable<any> {
+       
+    
     const headers = new HttpHeaders().append('Content-Type','application/x-www-form-urlencoded');
     headers.append('Content-Type','application/json')
     const data = {
-      fname:pldtxt.fname,
-      lname:pldtxt.lname,
-      em:pldtxt.em,
-      tel:pldtxt.tel,
-      bdate:pldtxt.bdate,
-      age:pldtxt.age,
-      adate:pldtxt.adate,
-      attendees:pldtxt.attendees,
+      fname:fname,
+      lname:lname,
+      em:em,
+      tel:tel,
+      bdate:bdate,
+      age:age,
+      adate:adate,
+      attendees:attendees,
     } 
-    return this.http.post(this.api_apipointment+pld, data, { headers });
+    console.log(data);
+    return this.http.post(this.api_apipointment, data, { headers });
     
   }
 

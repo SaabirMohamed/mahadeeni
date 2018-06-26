@@ -1,7 +1,9 @@
 .wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr ;
+    grid-gap: 100px;
+    background-color: transparent;
+    border: none;
 }
 
 .form-group input{
@@ -10,7 +12,9 @@
     display: block;
     margin: 5px;
 }
-
+app-appointmentform, app-anonform {
+    padding: 1em;
+}
 a {
     padding: 10px;
     background-color: green;
@@ -37,4 +41,7 @@ small, label {
 textarea {
     margin: 5px;
 }
+
+
+
 

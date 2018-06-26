@@ -30,18 +30,19 @@ export class CounsellingComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
+  onSubmit(fname) {
+    console.log("FNAME: " + fname);
+    
       
-    console.log(this.pload.fname,this.pload.lname,this.pload.em,this.pload.tel,this.pload.bdate,this.pload.age,this.pload.adate,this.pload.attendees);
-      this.loader = true;
-      
-      this.result = this.service.createAppointment(this.pload);
-      if(this.result !== '') {
-        this.complete = true;
-        this.loader = false;
+      // this.result = this.service.createAppointment(fname,lname,em,tel,bdate,age,adate,attendees)
+      // .subscribe(result => {
+      //   this.result = result;
+      //   this.loader = false;
+      //   this.complete = true;
+      // })
 
       }
       
 
     } 
-}
+

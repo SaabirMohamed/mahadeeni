@@ -1,25 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import {ServiceService} from '../../services/service.service';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
+import { ServiceService } from '../../../../services/service.service';
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  selector: 'app-anonform',
+  templateUrl: './anonform.component.html',
+  styleUrls: ['./anonform.component.css']
 })
-export class ContactComponent implements OnInit {
-  title: string = 'Mahadeeni GEO Location';
-  lat: number = 51.678418;
-  lng: number = 7.809007;
-
+export class AnonformComponent implements OnInit {
   loader: boolean;
-  result: Observable<any>;
+  result: Observable<any>
   constructor(private service: ServiceService) { }
 
   ngOnInit() {
   }
-
-
   onSubmit(n,num,em,s,m) {
     this.loader = true;
     // console.log('payload: ' + n + ' : ' + num + ' : ' + em + ' : ' + s + ' : ' + m);
@@ -33,10 +27,4 @@ export class ContactComponent implements OnInit {
     
 
     }
-
-    
-  }
-
-
-
-
+}
