@@ -1,0 +1,40 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.form-group input{
+    
+    padding: 10px;
+    display: block;
+    margin: 5px;
+}
+
+a {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+.theform {
+    
+    background-color: transparent;
+    width: 100%;
+    align-items: center;
+}
+
+.theimg img {
+    width: 300px;
+    height: 190px;
+    border-radius: 10px;
+}
+
+small, label {
+    padding: 5px;
+}
+textarea {
+    margin: 5px;
+}
+

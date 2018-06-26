@@ -11,8 +11,11 @@ export class ServiceService {
  
   images: Observable<any>;
   result: Observable<any>;
+  appointmentresult: Observable<any>;
   getresult: Observable<Iimage[]>;
   api = 'https://www.mahadeeni.co.za/assets/api.php';
+  api_apipointment = 'https://www.mahadeeni.co.za/assets/api_appointment.php';
+  api_apinon = 'https://www.mahadeeni.co.za/assets/api_apinon.php';
   myevent: Ievent[];
   constructor(private http: HttpClient) { }
 
@@ -46,7 +49,40 @@ export class ServiceService {
      return this.http.get<Observable<Iimage[]>>('https://mahadeeni.co.za/assets/images.php');
         
   }
+
+
+  createAppointment(pldtxt): Observable<any> {
+    // const pld = '?name='+n+'&num='+num+'&em='+em+'&subject='+s+'&message='+m;
+    console.log('?fname=' + pldtxt.fname + '&lname=' + pldtxt.lname + '&em=' + pldtxt.em + '&tel=' + pldtxt.tel + '&bdate=' + pldtxt.adate + '&age=' + pldtxt.age + '&adate=' + pldtxt.adate + '&attendees=' + pldtxt.attendees);
+    const pld = '?fname=' + pldtxt.fname + '&lname=' + pldtxt.lname + '&em=' + pldtxt.em + '&tel=' + pldtxt.tel + '&bdate=' + pldtxt.adate + '&age=' + pldtxt.age + '&adate=' + pldtxt.adate + '&attendees=' + pldtxt.attendees;
+    const headers = new HttpHeaders().append('Content-Type','application/x-www-form-urlencoded');
+    headers.append('Content-Type','application/json')
+    const data = {
+      fname:pldtxt.fname,
+      lname:pldtxt.lname,
+      em:pldtxt.em,
+      tel:pldtxt.tel,
+      bdate:pldtxt.bdate,
+      age:pldtxt.age,
+      adate:pldtxt.adate,
+      attendees:pldtxt.attendees,
+    } 
+    return this.http.post(this.api_apipointment+pld, data, { headers });
+    
   }
+
+
+
+  }
+
+//   $fname = $_GET["name"];
+// $lname = $_GET["num"];
+// $em = $_GET["em"];
+// $tel = $_GET["tel"];
+// $bdate = $_GET["bdate"];
+// $age = $_GET["age"];
+// $adate = $_GET["adate"];
+// $attendees = $_GET["attendees"];
 
 export interface Iimage {
     id:string;

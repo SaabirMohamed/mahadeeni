@@ -5,18 +5,19 @@ import { ServiceService } from '../../services/service.service';
 import { AgmCoreModule } from '@agm/core';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatTableModule, MatFormFieldModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { EvtableComponent } from './evtable/evtable.component';
-
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
+    FormsModule,
     AgmCoreModule,MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule,
     MatTableModule,MatFormFieldModule, MatPaginatorModule, MatSortModule
   ],
   declarations: [EvtableComponent],
-  exports: [HttpClientModule,AgmCoreModule, MatFormFieldModule, EvtableComponent],
+  exports: [FormsModule, HttpClientModule,AgmCoreModule, MatFormFieldModule, EvtableComponent],
   providers:[ServiceService]
 })
 export class GlobalsharedModule {}
