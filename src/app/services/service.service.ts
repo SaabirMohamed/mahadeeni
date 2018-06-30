@@ -51,23 +51,20 @@ export class ServiceService {
   }
 
 
-  createAppointment(fname,lname,em,tel,bdate,age,adate,attendees): Observable<any> {
+  createAppointment(n,num,em,adate): Observable<any> {
        
     
     const headers = new HttpHeaders().append('Content-Type','application/x-www-form-urlencoded');
     headers.append('Content-Type','application/json')
     const data = {
-      fname:fname,
-      lname:lname,
+      fname:n,
       em:em,
-      tel:tel,
-      bdate:bdate,
-      age:age,
-      adate:adate,
-      attendees:attendees,
+      tel:num,
+      adate:adate
     } 
-    console.log(data);
-    return this.http.post(this.api_apipointment, data, { headers });
+    // console.log(data);
+    const pld = '?fname=' + n + "&em=" + em + "&tel=" + num + "&adate=" + adate;
+    return this.http.post(this.api_apipointment+pld, data, { headers });
     
   }
 

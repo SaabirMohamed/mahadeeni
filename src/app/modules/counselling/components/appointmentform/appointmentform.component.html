@@ -7,7 +7,13 @@
 <p>
   Mahadeeni will send you available time slots for the date chosen and confirmation via email and phone.
 </p>
-<form>
+<div *ngIf="result" class="thanks">
+  Thank you, A Mahadeeni counsellor will get back to you shortly.
+</div>
+<div *ngIf="loader" class="loader">
+  SENDING...
+</div>
+<form *ngIf="!result">
   
   <p>
     <label for="">Your name</label>

@@ -14,13 +14,14 @@ export class AppointmentformComponent implements OnInit {
 
   ngOnInit() {
   }
-  onSubmit(n,num,em,s,m) {
+  onSubmit(n,num,em,adate) {
     this.loader = true;
     // console.log('payload: ' + n + ' : ' + num + ' : ' + em + ' : ' + s + ' : ' + m);
-    this.service.createEnquiry(n,num,em,s,m)
+    this.service.createAppointment(n,num,em,adate)
     .subscribe(result =>
       { 
         this.result  = result;
+        console.log(this.result);
         this.loader = false;
 
       });
