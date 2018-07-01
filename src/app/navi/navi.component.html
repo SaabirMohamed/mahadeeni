@@ -3,20 +3,50 @@
       
 
 
-<nav id="primary-nav" aria-label="Main Navigation">
-        <!-- <div class="logo">
-                <img width="90" height="90" src="../../assets/navilogo-transparent.png" alt="Mahadeeni Logo">
-        </div> -->
+<!-- <nav id="primary-nav" aria-label="Main Navigation">
+    
     <ul class="container">
+        <li><a (click)="clicker('home')" color="primary" style="color: #33a1c9; " routerLink="/home">| home |</a></li>
+
+        <li><a (click)="clicker('projects')" color="primary" style="color: #33a1c9; " routerLink="/projects">| projects |</a></li>
+        <li><a (click)="clicker('events')" color="primary" style="color: #33a1c9; " routerLink="/events">| Events |</a></li>
+        <li><a (click)="clicker('counselling')" color="primary" style="color: #33a1c9; " routerLink="/counselling">| counselling |</a></li>
+        
+       
+        
+        
+        <li><a (click)="clicker('posts')" color="primary" style="color: #33a1c9; " routerLink="/posts">| posts |</a></li>
+        <li><a (click)="clicker('gallery')" color="primary" style="color: #33a1c9; " routerLink="/gallery">| gallery |</a></li>
+        <li><a (click)="clicker('contact')" color="primary" style="color: #33a1c9; " routerLink="/contact">| contact |</a></li>
+        <li><a (click)="clicker('about')" color="primary" style="color: #33a1c9; " routerLink="/about">| About |</a></li>
+  </ul>
+</nav> -->
+<nav>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <section class="top-nav">
+    <div class="logo">
+        <img width="70" height="70" src="../../assets/icon-256x256.png" alt="Mahadeeni Logo">
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
+    <ul class="menu">
         <li><a (click)="clicker('home')" color="primary" style="color: #33a1c9; " routerLink="/home">home</a></li>
+
+        <li><a (click)="clicker('projects')" color="primary" style="color: #33a1c9; " routerLink="/projects">projects</a></li>
+        <li><a (click)="clicker('events')" color="primary" style="color: #33a1c9; " routerLink="/events">Events</a></li>
         <li><a (click)="clicker('counselling')" color="primary" style="color: #33a1c9; " routerLink="/counselling">counselling</a></li>
         
        
-        <li><a (click)="clicker('events')" color="primary" style="color: #33a1c9; " routerLink="/events">Events</a></li>
         
-        <li><a (click)="clicker('gallery')" color="primary" style="color: #33a1c9; " routerLink="/posts">posts</a></li>
+        
+        <li><a (click)="clicker('posts')" color="primary" style="color: #33a1c9; " routerLink="/posts">posts</a></li>
         <li><a (click)="clicker('gallery')" color="primary" style="color: #33a1c9; " routerLink="/gallery">gallery</a></li>
         <li><a (click)="clicker('contact')" color="primary" style="color: #33a1c9; " routerLink="/contact">contact</a></li>
         <li><a (click)="clicker('about')" color="primary" style="color: #33a1c9; " routerLink="/about">About</a></li>
-  </ul>
+    </ul>
+  </section>
 </nav>

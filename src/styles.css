@@ -40,7 +40,7 @@ body { margin: 0; }
 
 .outlet {
     position: absolute;
-    
+    padding-top: 20px;
     top: 0;
     left: 0;
     background: transparent;

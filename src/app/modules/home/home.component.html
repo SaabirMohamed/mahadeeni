@@ -1,5 +1,15 @@
+
+
 <header id="page-header">
-  <div class="logo">
+    <!-- <div class="list" *ngFor="let banner of highlightedContentResult | async">
+        <h5>{{banner.description}}</h5>
+        <a [routerLink]="banner.action"><img src="../../../assets/{{ banner.image }}" alt="{{banner.image}}"></a>
+     </div> -->
+     <div *ngIf="bannerloading" >
+       <h2>loading content...</h2>
+     </div>
+
+  <div class="logo" >
     <!-- <img src="https://s22.postimg.cc/z1kxtbp4h/logo-dark-187x32.png" alt="logo" /> -->
     <img style="transform: translateY(-22px);padding-bottom: 10px;width: 100%; height: 500px;"  class="animated fadeIn" [src]="bannerimage" alt="">
   </div>
@@ -16,7 +26,7 @@
 <main>
   <section class="main-section">
     <header  class="main-section-heading">
-      <h2>What we offer</h2>
+      <h2>What we offer </h2>
     </header>
     <div class="cards-container">
       <div class="card">
@@ -45,6 +55,8 @@
       </div>
     </div>
   </section>
+
+  <!-- staff section starts here -->
   
   <section class="main-section">
     <header class="main-section-heading">
@@ -84,4 +96,5 @@
       </div>
     </div>
   </section>
+   <!-- staff section ends here -->
 </main>

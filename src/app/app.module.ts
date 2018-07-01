@@ -11,12 +11,14 @@ import { NaviComponent } from './navi/navi.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule } from '@angular/material';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
+import { MfooterComponent } from './mfooter/mfooter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NaviComponent,
-    ErrorpageComponent
+    ErrorpageComponent,
+    MfooterComponent
   ],
   imports: [
     BrowserModule,
