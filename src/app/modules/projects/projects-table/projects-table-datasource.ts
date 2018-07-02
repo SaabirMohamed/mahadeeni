@@ -1,25 +1,32 @@
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator, MatSort } from '@angular/material';
 import { map } from 'rxjs/operators';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable, of as observableOf, merge } from 'rxjs';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { element } from 'protractor';
 
 // TODO: Replace this with your own data model type
 export interface EvtableItem {
   thumb: string;
   name: string;
-  description: string,
-  date:string;
+  funding: string,
+  deadline:string;
   status: string;
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: EvtableItem[] = [
-  {thumb: '', name: 'Radio Interview: saved Podcast', description: 'description',date: 'date', status: 'complete'},
-  {thumb: '', name: 'Mass Iftaar', description: 'description',date: 'date', status: 'complete'},
-  {thumb: '', name: 'Ramadaan Food Donations', description: 'description',date: 'date', status: 'complete'},
-  
-  
+  {thumb: '', name: 'Project name', funding: 'description',deadline: 'by which deadline', status: 'complete'},
+  {thumb: '', name: 'Project name', funding: 'description',deadline: 'by which deadline', status: 'complete'},
+  {thumb: '', name: 'Project name', funding: 'description',deadline: 'by which deadline', status: 'complete'},
+  {thumb: '', name: 'Project name', funding: 'description',deadline: 'by which deadline', status: 'complete'},
+  {thumb: '', name: 'Project name', funding: 'description',deadline: 'by which deadline', status: 'complete'},
+  {thumb: '', name: 'Project name', funding: 'description',deadline: 'by which deadline', status: 'complete'},
+  {thumb: '', name: 'Project name', funding: 'description',deadline: 'by which deadline', status: 'complete'},
+  {thumb: '', name: 'Project name', funding: 'description',deadline: 'by which deadline', status: 'complete'},
+  {thumb: '', name: 'Project name', funding: 'description',deadline: 'by which deadline', status: 'complete'},
+  {thumb: '', name: 'Project name', funding: 'description',deadline: 'by which deadline', status: 'complete'},
+ 
 ];
 
 /**
@@ -27,15 +34,37 @@ const EXAMPLE_DATA: EvtableItem[] = [
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class EvtableDataSource extends DataSource<EvtableItem> {
-  data: EvtableItem[] = EXAMPLE_DATA;
+export class ProjectsTableDataSource extends DataSource<EvtableItem> {
+  
   data2 = [];
-  // data = this.data2;
+  data: EvtableItem[] = this.data2;
 
   constructor(private afs: AngularFirestore, private paginator: MatPaginator, private sort: MatSort) {
     super();
     this.getProjects();
   }
+  
+  _db_path = '/projects';
+  // projects: Observable<any[]>;
+  projects: any;
+  
+  projectsData = [];
+
+  getProjects() {
+    this.projects = this.afs.collection(this._db_path)
+    .valueChanges();                                    
+    // this.projects.subscribe(data => console.log('data : ' + JSON.stringify(data)));
+    
+    this.projects.subscribe(data => {
+       for (let i = 0; i < data.length; i++) {
+        this.projectsData.push(data[i]);
+        this.data2 = data;
+       }
+       
+    }) 
+    }
+  
+
 
   /**
    * Connect this data source to the table. The table will only update when
@@ -53,6 +82,7 @@ export class EvtableDataSource extends DataSource<EvtableItem> {
 
     // Set the paginators length
     this.paginator.length = this.data.length;
+    // this.paginator.length = 5;
 
     return merge(...dataMutations).pipe(map(() => {
       return this.getPagedData(this.getSortedData([...this.data]));
@@ -87,34 +117,15 @@ export class EvtableDataSource extends DataSource<EvtableItem> {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
         case 'name': return compare(a.name, b.name, isAsc);
-        case 'description': return compare(a.description, b.description, isAsc);
+        case 'funding': return compare(a.funding, b.funding, isAsc);
         case 'status': return compare(a.status, b.status, isAsc);
-        // case 'status': return compare(a.status, b.status, isAsc);
-        case 'date': return compare(a.date, b.date, isAsc);
+        case 'status': return compare(a.status, b.status, isAsc);
+        case 'deadline': return compare(a.deadline, b.deadline, isAsc);
         case 'thumb': return compare(+a.thumb, +b.thumb, isAsc);
         default: return 0;
       }
     });
   }
-  _db_path = '/events';
-  // projects: Observable<any[]>;
-  projects: any;
-   
-  projectsData = [];
-
-  getProjects() {
-    this.projects = this.afs.collection(this._db_path)
-    .valueChanges();                                    
-    this.projects.subscribe(data => console.log('data : ' + JSON.stringify(data)));
-    
-    this.projects.subscribe(data => {
-       for (let i = 0; i < data.length; i++) {
-        this.projectsData.push(data[i]);
-        this.data2 = data;
-       }
-       
-    }) 
-    }
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */

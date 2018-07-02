@@ -13,11 +13,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   _api_path = 'https://mahadeeni.co.za/assets/getimages/php';
   
-  pageTitle = 'Welcome to Mahadeeni';
-  pageSubTitle = 'Building community, Uniting the Ummah toward education';
-  pageImageUrl = '../assets/icon-256x256.png';
-  pageTitleImageUrl = '../assets/pageImage.png';
-  // change this to look in folder..will check on server from php.
+  
+  // change this to look in folder..will check on server from php or firebase..pointer
   bannerImagesPath = '../../../assets/';
   // bannerimages = [this.bannerImagesPath + 'meetupflyerbanner.png',
   //                 this.bannerImagesPath + 'iftaarbanner.jpg',

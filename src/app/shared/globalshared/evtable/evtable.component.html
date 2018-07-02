@@ -1,12 +1,13 @@
 <div class="mat-elevation-z8">
-  <mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+  
+  <mat-table #table [dataSource]="dataSource.data2" matSort aria-label="Elements">
 
     <!-- thumb Column -->
-    <ng-container matColumnDef="thumb">
+    <ng-container  matColumnDef="thumb">
       <mat-header-cell class="columnheading" *matHeaderCellDef mat-sort-header>THUMB</mat-header-cell>
       <mat-cell *matCellDef="let row">
-        {{row.thumb}}
-        <img src="../../../../assets/icon-256x256.png" width="120" alt="">
+        <!-- {{row.thumb}} -->
+        <img src="../../../../assets/{{row.thumb}}" width="120" alt="">
       </mat-cell>
     </ng-container>
 
@@ -40,7 +41,7 @@
   </mat-table>
 
   <mat-paginator #paginator
-    [length]="dataSource.data.length"
+    [length]="dataSource.projectsData.length"
     [pageIndex]="0"
     [pageSize]="10"
     [pageSizeOptions]="[10 ,25, 50, 100, 250]">
