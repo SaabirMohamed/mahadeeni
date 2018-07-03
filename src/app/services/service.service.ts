@@ -20,7 +20,7 @@ export class ServiceService {
   api_apinon = 'https://www.mahadeeni.co.za/assets/api_apinon.php';
   myevent: Ievent[];
   postsUrl = '/posts';
-  posts: Observable<any>;;
+  posts: Observable<any>;
   eventsUrl = '/events';
   events: Observable<any>;
 
@@ -78,42 +78,42 @@ export class ServiceService {
 
   // CRUD posts
 
-  creatPosts() {
-    this.afs.collection(this.postsUrl).add({
+  // creatPosts() {
+  //   this.afs.collection(this.postsUrl).add({
 
-    }).then(data => console.log('added: ', data))
-    .catch(err => console.log(err));
-  }
+  //   }).then(data => console.log('added: ', data))
+  //   .catch(err => console.log(err));
+  // }
 
-  getPosts() {
-    this.afs.collection(this.postsUrl).valueChanges()
-    .subscribe(data => {
-      this.posts  = toObservable(data);
-    });
-  }
+  // getPosts() {
+  //   this.afs.collection(this.postsUrl).valueChanges()
+  //   .subscribe(data => {
+  //     this.posts  = toObservable(data);
+  //   });
+  // }
 
-  deletePost() {}
+  // deletePost() {}
 
-  updatePost() {}
+  // updatePost() {}
 
-  // CRUD events
-  creatEvent() {
-    this.afs.collection(this.eventsUrl).add({
+  // // CRUD events
+  // creatEvent() {
+  //   this.afs.collection(this.eventsUrl).add({
 
-    }).then(data => console.log('added: ', data))
-    .catch(err => console.log(err));
-  }
+  //   }).then(data => console.log('added: ', data))
+  //   .catch(err => console.log(err));
+  // }
 
-  getEvents() {
-    this.afs.collection(this.eventsUrl).valueChanges()
-    .subscribe(data => {
-      this.events  = toObservable(data);
-    });
-  }
+  // getEvents() {
+  //   this.afs.collection(this.eventsUrl).valueChanges()
+  //   .subscribe(data => {
+  //     this.events  = toObservable(data);
+  //   });
+  // }
 
-  deleteEvent() {}
+  // deleteEvent() {}
 
-  updateEvent() {}
+  // updateEvent() {}
 
 }
 
