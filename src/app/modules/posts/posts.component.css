@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Shrikhand');
 .support {
     align-items: center;
     background: tomato;
@@ -130,8 +132,7 @@
 
   /* // Styles for fun
   // ------------------------------------------------- */
-  @import url('https://fonts.googleapis.com/css?family=Ubuntu');
-  @import url('https://fonts.googleapis.com/css?family=Roboto|Shrikhand');
+
   body {
     font-family: 'Roboto', 'Ubuntu','Roboto Slab', georgia, serif;
     line-height: 1.6;
