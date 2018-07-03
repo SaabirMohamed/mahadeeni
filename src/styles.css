@@ -3,7 +3,11 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 @import url('https://fonts.googleapis.com/css?family=Shrikhand');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-body { margin: 0; }
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+body {
+  margin: 0;
+  font-family: Kaushan+Script, Roboto;
+}
 .page {
     position: absolute;
     display: grid;
@@ -13,7 +17,7 @@ body { margin: 0; }
     border-bottom: 1px solid rgba(0, 0, 0, .5);
     box-shadow: 0px 5px 5px rgba(0, 0, 0, .2);
     top: 0;
-    
+
 
 }
 
@@ -32,7 +36,7 @@ body { margin: 0; }
 .navigation button {
            opacity: 1;
            z-index: 11;
-          
+
            padding-bottom: 20px;
         }
 
@@ -49,29 +53,29 @@ body { margin: 0; }
     z-index: 9;
     margin: 4.1em 0em;
     height: 100%;
-    
-    
+
+
 }
 
 
 .background {
     position: fixed;
     /* background-color: transparent; */
-    
+
     top:0;
     margin: 0;
     z-index: 8;
 
-    
+
 }
 
 .background > video {
     position: fixed;
     top: 0;
-    
-    
 
-    
+
+
+
 }
 
 .mat-toolbar.mat-primary {
@@ -79,7 +83,7 @@ body { margin: 0; }
     color: black;
     opacity: 0.4;
 }
-body { margin: 0; }
+
 .contain {
     max-width: 1170px;
     margin-left: auto;
@@ -94,9 +98,9 @@ body { margin: 0; }
   .wrapper {
     /* background-color: rgba(178, 190, 123, .5);
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
-    border-left: 5px solid #fff; 
+    border-left: 5px solid #fff;
     border-right: 5px solid #fff;  */
     padding: 1em;
     font-family: Roboto;
   }
-body { margin: 0; }
+
