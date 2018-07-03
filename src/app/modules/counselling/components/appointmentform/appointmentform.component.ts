@@ -9,24 +9,28 @@ import { Observable } from 'rxjs';
 })
 export class AppointmentformComponent implements OnInit {
   loader: boolean;
-  result: Observable<any>
+  result: Observable<any>;
+  alreadySubmitted: boolean;
   constructor(private service: ServiceService) { }
-
+  lastSubmitDate: string;
   ngOnInit() {
+    if (localStorage.getItem('anonymous')) {
+      this.alreadySubmitted = true;
+      this.lastSubmitDate = localStorage.getItem('anonymous');
+    } else {
+      this.alreadySubmitted = false;
+    }
   }
-  onSubmit(n,num,em,adate) {
+  onSubmit(n, num, em, adate) {
     this.loader = true;
     // console.log('payload: ' + n + ' : ' + num + ' : ' + em + ' : ' + s + ' : ' + m);
-    this.service.createAppointment(n,num,em,adate)
-    .subscribe(result =>
-      { 
+    this.service.createAppointment(n, num, em, adate)
+    .subscribe(result => {
         this.result  = result;
         console.log(this.result);
         this.loader = false;
-
+       this.alreadySubmitted = true;
       });
-    
-
     }
 
 }

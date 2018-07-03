@@ -22,6 +22,7 @@ export class NaviComponent {
   clicker(bgname) {
     // console.log('bg ' + bgname + '.mp4');
       this.bgchange.emit(bgname);
+      this.resetScroll();
   }
 
   constructor(private elem: ElementRef, private breakpointObserver: BreakpointObserver) {}
@@ -41,8 +42,13 @@ export class NaviComponent {
     } else {
       this.isScrolling  = true;
       // console.log(window.scrollY);
-      this.elem.nativeElement.setAttribute('style', 'box-shadow: 0px 10px 13px #000 !important; font-size: 1.3rem');
+      this.elem.nativeElement
+      .setAttribute('style', 'box-shadow: 0px 10px 13px #000 !important; font-size: 1rem; transform: translateY(-10px)');
     }
+  }
+
+  resetScroll() {
+    window.scrollTo(0, 0);
   }
 
 

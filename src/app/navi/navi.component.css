@@ -10,6 +10,7 @@
     padding: 1em;
     opacity: 0.9;
 
+
 }
 h2 {
   vertical-align: center;
@@ -30,17 +31,20 @@ html, body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: #fff;
-   /* background: linear-gradient(to left, #989, white); */
+   /* background: linear-gradient(to left, green, white); */
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: #FFF;
   height: 70px;
   padding: 1em;
   opacity: 0.9;
-  transition: all 1000ms;
-  box-shadow: 0px 0px 0px #000;
+  transition: all 500ms;
+  /* box-shadow: 0px 0px 0px #000; */
   /* font-size: .7rem; */
+  box-sizing: border-box;
+  perspective: 1000;
+
 
 }
 .logo {
@@ -117,7 +121,11 @@ html, body {
   transform: rotate(-405deg);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
+  .logo {
+    display: none;
+
+  }
   .menu-button-container {
     display: block;
 
@@ -126,17 +134,18 @@ html, body {
     position: absolute;
     top: 0;
 
-    margin-top: 50px;
+    margin-top: 71px;
     left: 0;
     flex-direction: column;
     width: 300px;
     justify-content: center;
     align-items: center;
+
   }
   #menu-toggle ~ .menu li {
     height: 10;
     margin: 0;
-    padding: 0;
+    /* padding: 0; */
     border: 0;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
@@ -153,7 +162,7 @@ html, body {
     padding: 0.5em 0;
     width: 100%;
     color: white;
-    background-color: #222;
+    background-color: #fff;
   }
   .menu > li:not(:last-child) {
     border-bottom: 1px solid #444;
