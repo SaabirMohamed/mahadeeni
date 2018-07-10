@@ -1,3 +1,66 @@
-<div class="wrapper">POSTS CRUD OPERATIONS
-  {{ posts | async | json}}
-</div>
+<!-- <div class="wrapper">
+    <br><br><br><br><br>
+    <div *ngFor="let post of posts ">
+        <form>
+            <input type="text" name="title" value="{{post.title}}">
+            <br><button class="btn btn-primary">UPDATE</button>
+        </form>
+        <form>
+            <input type="text" name="title" value="{{post.subtitle}}">
+            <br><button class="btn btn-primary">UPDATE</button>
+        </form>
+        <form>
+            <input class="form-control" type="text" name="title" value="{{post.author}}">
+            <br><button class="btn btn-primary">UPDATE</button>
+        </form>
+        
+    <div *ngFor="let p of post.content">
+    <textarea cols="30" rows="10">
+        {{ p }}
+    </textarea>
+    <br><button class="btn btn-primary">UPDATE</button>
+    </div>
+    
+  </div>
+</div> -->
+
+<table>
+  <tr><th>ID</th>
+    <th>Title</th><th>SubTitle</th><th>content</th> <th>Auhor</th><th>actions</th>
+  </tr>
+  <tr *ngFor="let post of posts; let i = index">
+     <td>{{currentIDs[i]}}</td>
+
+      <td><input type="text" name="title" value="{{post.title}}"></td>
+      <td><input type="text" name="title" value="{{post.subtitle}}"></td>
+      <td><span  *ngFor="let p of post.content"><input type="text" name="title" value="{{p}}"></span></td>
+      <td><input class="form-control" type="text" name="title" value="{{post.author}}"></td>
+      <td>
+        <button (click)="updatePost(currentIDs[i],post)" class="btn btn-primary">UPDATE</button>
+        <button class="btn btn-primary">DELETE</button>
+      </td>
+
+  </tr>
+   
+
+</table>
+<table>
+    <tr><th>ID</th>
+      <th>Title</th><th>SubTitle</th><th>content</th> <th>Auhor</th><th>actions</th>
+    </tr>
+    <tr>
+       <td></td>
+  
+        <td><input type="text" name="title" placeholder="Enter a Post Title"></td>
+        <td><input type="text" name="subtitle" placeholder="Enter a Subtitle"></td>
+        <td><span><input type="text" name="content" placeholder="ent"></span></td>
+        <td><input class="form-control" type="text" name="title" placeholder="author's name"></td>
+        <td>
+          <button class="btn btn-primary" (click)="addNewPost()">ADD NEW POST </button>
+          <button type="reset" class="btn btn-primary">RESET</button>
+        </td>
+  
+    </tr>
+     
+  
+  </table>
