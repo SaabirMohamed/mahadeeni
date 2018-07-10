@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument ,AngularFirestoreCollection } from 'angularfire2/firestore';
-import 'rxjs/add/operator/map';
+
 import { Observable } from 'rxjs';
 @Component({
   selector: 'app-posts-crud',
