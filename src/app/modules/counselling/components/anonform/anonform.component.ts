@@ -9,22 +9,31 @@ import { ServiceService } from '../../../../services/service.service';
 })
 export class AnonformComponent implements OnInit {
   loader: boolean;
-  result: Observable<any>
+  result: Observable<any>;
+  alreadySubmitted: boolean;
+  lastSubmitDate = '';
   constructor(private service: ServiceService) { }
 
   ngOnInit() {
+    if (localStorage.getItem('anonymous')) {
+      this.alreadySubmitted = true;
+      this.lastSubmitDate = localStorage.getItem('anonymous');
+    } else {
+      this.alreadySubmitted = false;
+    }
   }
-  onSubmit(n,num,em,s,m) {
+
+  public onSubmit(n, num, em, m) {
     this.loader = true;
     // console.log('payload: ' + n + ' : ' + num + ' : ' + em + ' : ' + s + ' : ' + m);
-    this.service.createEnquiry(n,num,em,s,m)
-    .subscribe(result =>
-      { 
+    this.service.createAppointment(n, num, em,  m)
+    .subscribe(result => {
         this.result  = result;
         this.loader = false;
+        localStorage.setItem('anonymous', Date.now().toString());
+        this.alreadySubmitted = true;
 
       });
-    
 
     }
 }

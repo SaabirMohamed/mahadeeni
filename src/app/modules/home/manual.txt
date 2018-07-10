@@ -1,0 +1,3 @@
+connect home page to firebase...thats gona be a mission again.
+
+

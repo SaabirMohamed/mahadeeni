@@ -1,0 +1,48 @@
+<div class="mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource.data2" matSort aria-label="Elements">
+  
+      <!-- thumb Column -->
+      <ng-container matColumnDef="thumb">
+        <mat-header-cell class="columnheading" *matHeaderCellDef mat-sort-header>THUMB</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <!-- {{row.thumb }} -->
+          <img src="../../../../assets/icon-256x256.png" width="120" alt="">
+        </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell class="columnheading" *matHeaderCellDef mat-sort-header>NAME</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
+      </ng-container>
+      
+      <!-- description Column -->
+      <ng-container matColumnDef="description">
+        <mat-header-cell class="columnheading" *matHeaderCellDef mat-sort-header>FUNDING</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.funding}}</mat-cell>
+      </ng-container>
+      
+      <!-- date Column -->
+      <ng-container matColumnDef="date">
+        <mat-header-cell class="columnheading" *matHeaderCellDef mat-sort-header>DEADLINE</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.deadline}}</mat-cell>
+      </ng-container>
+      
+      <!-- status Column -->
+      <ng-container matColumnDef="status">
+        <mat-header-cell class="columnheading" *matHeaderCellDef mat-sort-header>STATUS</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.status}}</mat-cell>
+      </ng-container>
+      
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  
+    <mat-paginator #paginator
+      [length]="this.paginator.length"
+      [pageIndex]="0"
+      [pageSize]="5"
+      [pageSizeOptions]="[1, 5, 10 ,25, 50, 100, 250]">
+    </mat-paginator>
+  </div>

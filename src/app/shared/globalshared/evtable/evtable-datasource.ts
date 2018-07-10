@@ -2,6 +2,7 @@ import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator, MatSort } from '@angular/material';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 // TODO: Replace this with your own data model type
 export interface EvtableItem {
@@ -28,9 +29,12 @@ const EXAMPLE_DATA: EvtableItem[] = [
  */
 export class EvtableDataSource extends DataSource<EvtableItem> {
   data: EvtableItem[] = EXAMPLE_DATA;
+  data2 = [];
+  // data = this.data2;
 
-  constructor(private paginator: MatPaginator, private sort: MatSort) {
+  constructor(private afs: AngularFirestore, private paginator: MatPaginator, private sort: MatSort) {
     super();
+    this.getProjects();
   }
 
   /**
@@ -85,13 +89,32 @@ export class EvtableDataSource extends DataSource<EvtableItem> {
         case 'name': return compare(a.name, b.name, isAsc);
         case 'description': return compare(a.description, b.description, isAsc);
         case 'status': return compare(a.status, b.status, isAsc);
-        case 'status': return compare(a.status, b.status, isAsc);
+        // case 'status': return compare(a.status, b.status, isAsc);
         case 'date': return compare(a.date, b.date, isAsc);
         case 'thumb': return compare(+a.thumb, +b.thumb, isAsc);
         default: return 0;
       }
     });
   }
+  _db_path = '/events';
+  // projects: Observable<any[]>;
+  projects: any;
+   
+  projectsData = [];
+
+  getProjects() {
+    this.projects = this.afs.collection(this._db_path)
+    .valueChanges();                                    
+    this.projects.subscribe(data => console.log('data : ' + JSON.stringify(data)));
+    
+    this.projects.subscribe(data => {
+       for (let i = 0; i < data.length; i++) {
+        this.projectsData.push(data[i]);
+        this.data2 = data;
+       }
+       
+    }) 
+    }
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */

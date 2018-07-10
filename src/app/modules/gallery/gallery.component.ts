@@ -16,11 +16,10 @@ export class GalleryComponent implements OnInit {
   constructor(private svc: ServiceService) { }
 
   ngOnInit() {
-    
-    this.svc.GetAllImages().subscribe(data => {
-      this.images = data;
-    }
-    );
+    //   this.svc.GetAllImages().subscribe(data => {
+    //   this.images = data;
+    // }
+    // );
   }
 
  }

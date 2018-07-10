@@ -23,7 +23,7 @@ export class CounsellingComponent implements OnInit {
     attendees: ''
 
 
-  }
+  };
 
   constructor(private service: ServiceService) { }
 
@@ -31,9 +31,7 @@ export class CounsellingComponent implements OnInit {
   }
 
   onSubmit(fname) {
-    console.log("FNAME: " + fname);
-    
-      
+    console.log('FNAME: ' + fname);
       // this.result = this.service.createAppointment(fname,lname,em,tel,bdate,age,adate,attendees)
       // .subscribe(result => {
       //   this.result = result;
@@ -42,7 +40,6 @@ export class CounsellingComponent implements OnInit {
       // })
 
       }
-      
 
-    } 
+    }
 

@@ -7,15 +7,22 @@
 <p>
   Mahadeeni will send you available time slots for the date chosen and confirmation via email and phone.
 </p>
-<form>
-  
+<div *ngIf="result || alreadySubmitted" class="thanks">
+  Thank you, A Mahadeeni counsellor will get back to you shortly. <br>
+  <small>You have submitted appointment enquiry successfully : on : <span> {{ lastSubmitDate }}</span></small>
+</div>
+<div *ngIf="loader" class="loader">
+  SENDING...
+</div>
+<form *ngIf="!result && !alreadySubmitted">
+
   <p>
     <label for="">Your name</label>
     <input value="" maxlength="50" placeholder="First name" name="n" #n type="text">
   </p>
   <p>
     <label for="">Your surname</label>
-    <input value="" maxlength="50" placeholder="First name" name="n" #n type="text">
+    <input value="" maxlength="50" placeholder="Your surname" name="n" #n type="text">
   </p>
   <p>
     <label for="number">Contact Number</label>
@@ -29,11 +36,11 @@
     <label for="">When would you like ?</label>
     <input value="" placeholder="Date and time" name="adate" #adate type="date">
   </p>
- 
+
   <p *ngIf="!loader" class="full-width">
     <a class="mybtn"  (click)="onSubmit(n.value,num.value,em.value,adate.value)">Request an Appointment</a>
   </p>
-  
+
 </form>
 
 <!-- <img src="http://www.mahadeeni.co.za/assets/message.png" alt=""> -->

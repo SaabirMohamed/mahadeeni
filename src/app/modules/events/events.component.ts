@@ -13,11 +13,11 @@ import {MatTableDataSource, MatFormField, MatPaginator, MatSort} from '@angular/
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
-  
+
   constructor(private svc: ServiceService) { }
 
   ngOnInit() {
-    
+
   }
 
 

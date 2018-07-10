@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  title: string = 'Mahadeeni GEO Location';
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  title = 'Mahadeeni GEO Location';
+  lat = 51.678418;
+  lng = 7.809007;
 
   loader: boolean;
   result: Observable<any>;
@@ -20,21 +20,16 @@ export class ContactComponent implements OnInit {
   }
 
 
-  onSubmit(n,num,em,s,m) {
+  onSubmit(n, num, em, s, m) {
     this.loader = true;
     // console.log('payload: ' + n + ' : ' + num + ' : ' + em + ' : ' + s + ' : ' + m);
-    this.service.createEnquiry(n,num,em,s,m)
-    .subscribe(result =>
-      { 
+    this.service.createContactEnquiry(n, num, em, s, m)
+    .subscribe(result => {
         this.result  = result;
         this.loader = false;
 
       });
-    
-
     }
-
-    
   }
 
 

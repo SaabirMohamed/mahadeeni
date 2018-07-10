@@ -29,8 +29,12 @@
     "@fortawesome/fontawesome-free": "^5.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.0",
     "@fortawesome/free-solid-svg-icons": "^5.1.0",
+    "angularfire2": "^5.0.0-rc.11",
+    "animate.css": "^3.6.1",
     "core-js": "^2.5.4",
+    "firebase": "^5.2.0",
     "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.2.1",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
