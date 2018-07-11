@@ -1,0 +1,83 @@
+[33mcommit 0672949d7c0fdc28d8d561fdd69181102d1338b5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/homePageRoute[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mhomePageRoute[m[33m)[m
+Author: Saabir <saabirgmohamed@gmail.com>
+Date:   Mon Jul 2 08:56:57 2018 +0200
+
+    added firebase and a projects route
+
+[33mcommit c1a14401fbd6ba62b7be64b17dd34432301bfd15[m
+Author: Saabir <saabirgmohamed@gmail.com>
+Date:   Sun Jul 1 13:50:21 2018 +0200
+
+    added projects module and edited home
+
+[33mcommit 16741e797c12684eddab2b2fe29c3261de6b5572[m
+Author: Saabir <saabirgmohamed@gmail.com>
+Date:   Sat Jun 30 18:54:32 2018 +0200
+
+    changed the readme
+
+[33mcommit f5c48f169207ef0f37d0cb67d2936ce505789090[m
+Author: Saabir <saabirgmohamed@gmail.com>
+Date:   Sat Jun 30 18:51:25 2018 +0200
+
+    same-forgot to save txt
+
+[33mcommit a9ae5c4eec04692d3268fa4f409b16604945d840[m
+Author: Saabir <saabirgmohamed@gmail.com>
+Date:   Sat Jun 30 18:48:52 2018 +0200
+
+    Added manual.txt for authors-home module
+
+[33mcommit 42e62c361c21a90bae67592bc6b74ceae6067a5a[m
+Author: Saabir <saabirgmohamed@gmail.com>
+Date:   Sat Jun 30 18:45:26 2018 +0200
+
+    testing some layouts on home page
+
+[33mcommit c29be10f4ae967447ec50e24bce5359e7210a1ac[m
+Author: Saabir <saabirgmohamed@gmail.com>
+Date:   Sat Jun 30 11:26:04 2018 +0200
+
+    anon form edit
+
+[33mcommit 3178cb22fd264c2357648dbae88ba0a1662043e3[m
+Author: Saabir <saabirgmohamed@gmail.com>
+Date:   Tue Jun 26 23:16:55 2018 +0200
+
+    modified couselling..still testing forms
+
+[33mcommit 74c09f568aa320b3804e9ae3eb34adaafbe8bc53[m[33m ([m[1;31morigin/counselling[m[33m, [m[1;32mcounselling[m[33m)[m
+Author: Saabir <saabirgmohamed@gmail.com>
+Date:   Tue Jun 26 17:58:17 2018 +0200
+
+    initial added html forms..testing
+
+[33mcommit 295e70e0ea1607aff9100a43e72bf7ced7a7d81a[m[33m ([m[1;31morigin/events[m[33m, [m[1;32mevents[m[33m)[m
+Author: Saabir <saabirgmohamed@gmail.com>
+Date:   Tue Jun 26 00:25:25 2018 +0200
+
+    added events table...no live data
+
+[33mcommit 76408f5976b81d3910ed7f8b75985b9471d77f3e[m[33m ([m[1;31morigin/about[m[33m, [m[1;32mabout[m[33m)[m
+Author: Saabir <saabirgmohamed@gmail.com>
+Date:   Mon Jun 25 15:36:19 2018 +0200
+
+    updated about page and wrapper colours
+
+[33mcommit e8d802c825b0eba399da64c46156d48f7ce04fa1[m[33m ([m[1;31morigin/contacts[m[33m, [m[1;32mcontacts[m[33m)[m
+Author: Saabir <saabirgmohamed@gmail.com>
+Date:   Mon Jun 25 14:59:18 2018 +0200
+
+    contacts module updated
+
+[33mcommit 345853549103ef29e5da2acfc39170d1057e86c1[m
+Author: saabirmohamed <saabirgmohamed@gmail.com>
+Date:   Sat Jun 23 15:18:06 2018 +0200
+
+    first commit- all files
+
+[33mcommit bb87ccba993603281090d33a6f5a5eef6c581252[m
+Author: saabirmohamed <saabirgmohamed@gmail.com>
+Date:   Mon Jun 18 05:18:11 2018 +0200
+
+    initial commit

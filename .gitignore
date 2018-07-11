@@ -8,6 +8,9 @@
 # dependencies
 /node_modules
 /sources
+/src/environments
+/pvt
+
 
 # IDEs and editors
 /.idea
@@ -17,6 +20,7 @@
 *.launch
 .settings/
 *.sublime-workspace
+
 
 # IDE - VSCode
 .vscode/*
@@ -33,6 +37,7 @@
 npm-debug.log
 yarn-error.log
 testem.log
+package-lock.json
 /typings
 
 # System Files
