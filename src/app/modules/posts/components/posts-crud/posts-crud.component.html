@@ -24,43 +24,44 @@
   </div>
 </div> -->
 
-<table>
-  <tr><th>ID</th>
-    <th>Title</th><th>SubTitle</th><th>content</th> <th>Auhor</th><th>actions</th>
-  </tr>
-  <tr *ngFor="let post of posts; let i = index">
-     <td>{{currentIDs[i]}}</td>
-
-      <td><input type="text" name="title" value="{{post.title}}"></td>
-      <td><input type="text" name="title" value="{{post.subtitle}}"></td>
-      <td><span  *ngFor="let p of post.content"><input type="text" name="title" value="{{p}}"></span></td>
-      <td><input class="form-control" type="text" name="title" value="{{post.author}}"></td>
-      <td>
-        <button (click)="updatePost(currentIDs[i],post)" class="btn btn-primary">UPDATE</button>
-        <button class="btn btn-primary">DELETE</button>
-      </td>
-
-  </tr>
-   
-
-</table>
-<table>
-    <tr><th>ID</th>
-      <th>Title</th><th>SubTitle</th><th>content</th> <th>Auhor</th><th>actions</th>
-    </tr>
-    <tr>
-       <td></td>
-  
-        <td><input type="text" name="title" placeholder="Enter a Post Title"></td>
-        <td><input type="text" name="subtitle" placeholder="Enter a Subtitle"></td>
-        <td><span><input type="text" name="content" placeholder="ent"></span></td>
-        <td><input class="form-control" type="text" name="title" placeholder="author's name"></td>
-        <td>
+<div class="card-form">
+    <form class="postsedit">
+      <div class="form-title">ADD | REMOVE | EDIT POSTS</div>
+      <div class="form-body">
+        <div class="row" *ngFor="let post of posts; let i = index" >
+          <div>
+              <label>ID</label> <br>
+              <small>{{currentIDs[i]}}</small> 
+          </div>
+          
+          
+          <label for="post.title">Post Title</label> <br>
+          <input type="text" name="posts.title" value="{{post.title}}"> <br>
+          <label for="post.subtitle">Post Subtitle</label> <br>
+          <input type="text" name="posts.subtitle" value="{{post.subtitle}}"> 
+          <label for="post.content">Content [each paragraph]</label> <br>
+          <span  *ngFor="let p of post.content">
+            <textarea rows="8" type="text" name="posts.content" value="{{p}}"></textarea></span> <br>
+          <label for="post.author">Author</label>
+          <input class="form-control" type="text" name="posts.author" value="{{post.author}}">
+        </div>
+        <div class="row" >
+            
+        </div>
+      </div>
+      <div class="rule"></div>
+      <div class="form-footer">
           <button class="btn btn-primary" (click)="addNewPost()">ADD NEW POST </button>
           <button type="reset" class="btn btn-primary">RESET</button>
-        </td>
-  
-    </tr>
-     
-  
-  </table>
+
+      </div>
+    </form>
+
+
+  </div>
+
+
+
+
+
+
