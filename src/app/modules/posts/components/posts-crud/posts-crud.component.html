@@ -23,7 +23,7 @@
     
   </div>
 </div> -->
-
+<!-- 
 <table>
   <tr><th>ID</th>
     <th>Title</th><th>SubTitle</th><th>content</th> <th>Auhor</th><th>actions</th>
@@ -34,6 +34,9 @@
       <td><input type="text" name="title" value="{{post.title}}"></td>
       <td><input type="text" name="title" value="{{post.subtitle}}"></td>
       <td><span  *ngFor="let p of post.content"><input type="text" name="title" value="{{p}}"></span></td>
+      <td>
+          <div [froalaEditor]>Hello, Froala!</div>
+      </td>
       <td><input class="form-control" type="text" name="title" value="{{post.author}}"></td>
       <td>
         <button (click)="updatePost(currentIDs[i],post)" class="btn btn-primary">UPDATE</button>
@@ -63,4 +66,12 @@
     </tr>
      
   
-  </table>
+  </table> -->
+
+
+
+
+
+<div class="mat-app-background basic-container">
+  <ngx-wig  [content]="wysiwygcontent" [placeholder]="'Add your content.'"></ngx-wig>>
+</div>

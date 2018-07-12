@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class PostsCRUDComponent implements OnInit {
 
   constructor(private afs: AngularFirestore) { }
-
+  wysiwygcontent:any;
   posts: Observable<Ipost>[];
   currentIDs =  [];  
   ngOnInit() {
@@ -24,11 +24,7 @@ export class PostsCRUDComponent implements OnInit {
     const id = this.afs.collection('/posts').snapshotChanges().subscribe(snap => {
       snap.map(a => this.currentIDs.push(a.payload.doc.id))
     });
-    
-     
-      
 
-  
   }
 
   updatePost(key: any, payload: Ipost) {

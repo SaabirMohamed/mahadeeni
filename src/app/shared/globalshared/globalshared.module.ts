@@ -11,18 +11,22 @@ import { EvtableComponent } from './evtable/evtable.component';
 import {FormsModule} from '@angular/forms';
 import { environment } from '../../../environments/environment';
 import { AngularFirestore } from 'angularfire2/firestore';
-
+import {NgxWigModule} from 'ngx-wig';
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
+    NgxWigModule,
     AngularFireModule.initializeApp(environment.fbconf, 'mahadeeni'),
     AgmCoreModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule,
     MatTableModule, MatFormFieldModule, MatPaginatorModule, MatSortModule
   ],
   declarations: [EvtableComponent],
-  exports: [FormsModule, HttpClientModule, AgmCoreModule, MatFormFieldModule, EvtableComponent, AngularFireModule],
+  exports: [FormsModule,
+            HttpClientModule,
+            AgmCoreModule,
+            MatFormFieldModule, EvtableComponent, AngularFireModule],
   providers: [ServiceService, AngularFirestore]
 })
 export class GlobalsharedModule {}

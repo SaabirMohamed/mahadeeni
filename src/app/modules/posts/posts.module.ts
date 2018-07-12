@@ -5,12 +5,14 @@ import { PostsRoutingModule } from './posts-routing.module';
 import { PostsComponent } from './posts.component';
 import { PostsCRUDComponent } from './components/posts-crud/posts-crud.component';
 import { GlobalsharedModule } from '../../shared/globalshared/globalshared.module';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 @NgModule({
   imports: [
     CommonModule,
     PostsRoutingModule,
-    GlobalsharedModule
+    GlobalsharedModule,
+    FroalaEditorModule.forRoot(), FroalaViewModule.forRoot()
   ],
   declarations: [PostsComponent, PostsCRUDComponent]
 })
