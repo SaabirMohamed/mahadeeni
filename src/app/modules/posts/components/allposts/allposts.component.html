@@ -1,0 +1,58 @@
+<div class="wrapper" *ngIf="!showDetail">
+<div style="display:flex; justify-content:center;align-items:center"> 
+	<h3 style="color:white; flex 1">
+		Articles and Posts @ Mahadeeni
+	</h3>
+	<!--<p>{{posts | json}}</p>-->
+</div>
+<div class="blog-card" *ngFor="let post of posts; let i = index">
+	<div  class="photo photo1">
+		<img width="300" src="{{post.image}}" alt="">
+	</div>
+	<ul class="details">
+		<li class="author"><a href="#">{{post.author}}</a></li>
+		<li class="date">{{post.entryDate}}</li>
+		<li class="tags">
+			<ul>
+				<li *ngFor="let tag of post.keywords"><a href="#">{{tag}}</a></li>
+				
+			</ul>
+		</li>
+	</ul>
+	<div class="description">
+		<h1>{{post.title}}</h1>
+		<h2>{{post.subtitle}}</h2>
+		<div class="summary" *ngFor="let line of post.content;let i=$index">
+            {{line}} 
+            
+            
+        </div>
+
+		<a routerLink="/postread/{{currentIDs[i]}}">Read more </a>
+	</div>
+</div>
+
+
+<!--<div class="blog-card alt">
+	<div class="photo photo2"></div>
+	<ul class="details">
+		<li class="author"><a href="#">Some author</a></li>
+		<li class="date">July. 15, 2018</li>
+		<li class="tags">
+			<ul>
+				<li><a href="#">islam</a></li>
+				<li><a href="#">sunnah</a></li>
+				<li><a href="#">quran</a></li>
+			</ul>
+		</li>
+	</ul>
+	<div class="description">
+		<h1>How to make wudu correctly</h1>
+		<h2>step by step guide for adults and kids</h2>
+		<p class="summary">
+            Wudu is the pre-requisite for your prayer and thus needs to be performed with care. <br> <br>
+       </p>
+		<a href="#">Read More</a>
+	</div>
+</div>-->
+</div>

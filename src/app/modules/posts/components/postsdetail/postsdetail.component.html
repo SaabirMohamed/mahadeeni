@@ -1,0 +1,35 @@
+
+<div class="wrapper">
+<div style="display:flex; justify-content:center;align-items:center"> 
+	<h3 style="color:white; flex 1">
+		Post 
+	</h3>
+	<!--<p>{{posts | json}}</p>-->
+</div>
+<div class="blog-card" *ngFor="let post of posts; let i = index">
+	<div  class="photo photo1">
+		<img width="300" src="{{post.image}}" alt="">
+	</div>
+	<ul class="details">
+		<li class="author"><a href="#">{{post.author}}</a></li>
+		<li class="date">{{post.entryDate}}</li>
+		<li class="tags">
+			<ul>
+				<li *ngFor="let tag of post.keywords"><a href="#">{{tag}}</a></li>
+				
+			</ul>
+		</li>
+	</ul>
+	<div class="description">
+		<h1>{{post.title}}</h1>
+		<h2>{{post.subtitle}}</h2>
+		<div class="summary" *ngFor="let line of post.content;let i=$index">
+            {{line}} 
+            
+            
+        </div>
+
+		<a routerLink="openPost({{currentIDs[i]}})">Read more</a>
+	</div>
+</div>
+</div>
