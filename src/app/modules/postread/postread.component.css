@@ -1,0 +1,36 @@
+.postcontainer {
+  display: grid;
+  width: 100%;
+  margin: 1rem;
+  
+  grid-template-areas: "image image image image"
+                       "subtitle subtitle subtitle subtitle"                      
+                       "author author author author"
+                       "content content content content";
+  
+  
+  
+    
+}
+
+.postimage {
+    
+    grid-area: image;
+        
+}
+
+.title {
+    
+    grid-area: title;
+    
+    border: 1px solid white;
+}
+.subtitle {
+    
+    grid-area: subtitle;
+}
+
+.content {
+    
+    grid-area: content;
+}

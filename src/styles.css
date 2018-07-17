@@ -105,4 +105,37 @@ body {
   }
 
 
-body { margin: 0; }
+  @keyframes fadeInUp {
+    0% {opacity: 0; transform: translateY(100px)}
+    100% {opacity: 1; transform: translateY(0)}
+}
+
+.fadeInUp {
+    animation: fadeInUp 300ms ease-in;
+}
+
+@keyframes fadeInLeft {
+    0% {opacity: 0; transform: translateX(-300px)}
+    100% {opacity: 1; transform: translateX(0)}
+}
+
+.fadeInLeft {
+    animation: fadeInLeft 500ms ease-in-out;
+}
+@keyframes fadeInRight {
+    0% {opacity: 0; transform: translateX(300px)}
+    100% {opacity: 1; transform: translateX(0)}
+}
+
+.fadeInRight {
+    animation: fadeInRight 500ms ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.fadeIn {
+    animation: fadeIn 800ms ease-in-out;
+}

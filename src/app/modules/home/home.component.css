@@ -2,6 +2,22 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif !important;
   }
+
+  .bannerloading {
+    display:flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 30px;  
+  }
+   .img{
+    flex: 1;
+
+  }
+   .msg {
+    flex: 1;
+
+  }
   
   html, body {
     margin: 0;

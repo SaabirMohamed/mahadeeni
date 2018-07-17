@@ -1,13 +1,13 @@
 
-<div class="wrapper">
+<div class="wrapper fadeIn">
 <div style="display:flex; justify-content:center;align-items:center"> 
 	<h3 style="color:white; flex 1">
 		Post 
 	</h3>
 	<!--<p>{{posts | json}}</p>-->
 </div>
-<div class="blog-card" *ngFor="let post of posts; let i = index">
-	<div  class="photo photo1">
+<div class="blog-card fadeInLeft" *ngFor="let post of posts; let i = index">
+	<div  class="fadeIn photo photo1">
 		<img width="300" src="{{post.image}}" alt="">
 	</div>
 	<ul class="details">

@@ -9,10 +9,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./allposts.component.css']
 })
 export class AllpostsComponent implements OnInit {
-  @Input('id') id: string
+  @Input('id') id: string;
 
   posts: Observable<Ipost>[];
-  currentIDs =  []; 
+  currentIDs =  [];
    showDetail: boolean;
   constructor(private afs: AngularFirestore) { }
 
@@ -20,15 +20,13 @@ export class AllpostsComponent implements OnInit {
     const id = this.afs.collection('/posts').snapshotChanges().subscribe(snap => {
       snap.map(a => {
         this.currentIDs.push(a.payload.doc.id);
-        
-        
+
       });
       this.afs.collection<Observable<Ipost>>('/posts').valueChanges().subscribe(data => {
       this.posts = data;
     });
 
     });
-    
 
 }
 
@@ -46,7 +44,7 @@ export interface Ipost {
   entryDate: string;
   author: string;
   path: string;
-  keywords : Itag[]
+  keywords: Itag[];
 }
  export interface Itag {
    name: string;

@@ -25,7 +25,9 @@ export class NaviComponent {
       this.resetScroll();
   }
 
-  constructor(private elem: ElementRef, private breakpointObserver: BreakpointObserver) {}
+  constructor(private elem: ElementRef, private breakpointObserver: BreakpointObserver) {
+    this.bgchange.emit('home');
+  }
   @HostListener('window:scroll', ['$event'])
   onScroll($event: Event): void {
     console.log('On Scroll');

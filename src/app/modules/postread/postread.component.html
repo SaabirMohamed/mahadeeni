@@ -1,3 +1,14 @@
-{{post |async | json}}
+<div *ngIf="post" class="postcontainer">
 
-<img src="http://www.mahadeeni.co.za/assets/{{post.image | async}}" alt="">
+    <div class="postimage" >
+        <img  src="{{post.image}}" alt="{{post.title}}">
+    
+    </div>
+    <div class="postbody">
+        <h3 class="title">{{post.title}}</h3>
+        <h5 class="subtitle">{{post.subtitle}}</h5>
+        <p class="content" *ngFor="let c of post.content">{{c}}</p>
+    </div>
+</div>
+
+
