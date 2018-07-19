@@ -1,3 +1,28 @@
+.layout {
+  opacity: .8;
+  display: flex;
+  align-content:center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.layout:hover {
+  opacity: 1;
+}
+
+.layout .blog-card {
+  
+  align-content: center;
+  
+  padding:5px;
+  margin: 5px;
+  border: 5px solid #fff;
+}
+
+.photo > img {
+  width: 500px;
+  height: 300px;
+}
+
 /*PEN STYLES*/
 
 body {

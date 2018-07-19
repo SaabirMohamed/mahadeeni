@@ -34,3 +34,7 @@
     
     grid-area: content;
 }
+
+.author {
+    grid-area: author;
+}

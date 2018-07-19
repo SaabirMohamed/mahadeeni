@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { EventsRoutingModule } from './events-routing.module';
 import { EventsComponent } from './events.component';
 import { GlobalsharedModule } from '../../shared/globalshared/globalshared.module';
+import { EventeditComponent } from './components/eventedit/eventedit.component';
 
 // the table
 
@@ -14,6 +15,6 @@ import { GlobalsharedModule } from '../../shared/globalshared/globalshared.modul
     EventsRoutingModule,
     GlobalsharedModule
   ],
-  declarations: [EventsComponent]
+  declarations: [EventsComponent, EventeditComponent]
 })
 export class EventsModule { }

@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Ipost } from './posts.model';
-import { AngularFirestore } from '../../../node_modules/angularfire2/firestore';
-import { toObservable } from '../../../node_modules/@angular/forms/src/validators';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { toObservable } from '@angular/forms/src/validators';
 
 
 @Injectable({

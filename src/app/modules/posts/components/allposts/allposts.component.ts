@@ -30,7 +30,7 @@ export class AllpostsComponent implements OnInit {
 
 }
 
-openPost(){
+openPost() {
   this.showDetail = true;
 }
 

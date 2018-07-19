@@ -1,26 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
-@Component({
-  selector: 'app-postsdetail',
-  templateUrl: './postsdetail.component.html',
-  styleUrls: ['./postsdetail.component.css']
-})
-export class PostsdetailComponent implements OnInit {
 
-  posts: Observable<Ipost>[];
+@Component({
+  selector: 'app-eventedit',
+  templateUrl: './eventedit.component.html',
+  styleUrls: ['./eventedit.component.css']
+})
+export class EventeditComponent implements OnInit {
+
+  event: Observable<Ievent>[];
   currentIDs =  [];
   showDetail: boolean;
   constructor(private afs: AngularFirestore) { }
 
   ngOnInit() {
-    const id = this.afs.collection('/posts').snapshotChanges().subscribe(snap => {
+    const id = this.afs.collection('/events').snapshotChanges().subscribe(snap => {
       snap.map(a => {
         this.currentIDs.push(a.payload.doc.id);
 
       });
-      this.afs.collection<Observable<Ipost>>('/posts').valueChanges().subscribe(data => {
-      this.posts = data;
+      this.afs.collection<Observable<Ievent>>('/events').valueChanges().subscribe(data => {
+      this.event = data;
     });
 
     });
@@ -32,7 +33,7 @@ export class PostsdetailComponent implements OnInit {
 
 }
 
-export interface Ipost {
+export interface Ievent {
 
   title: string;
   subtitle: string;
@@ -49,5 +50,3 @@ export interface Ipost {
 export interface Iparagraphs {
   paragraph: string;
 }
-
-
