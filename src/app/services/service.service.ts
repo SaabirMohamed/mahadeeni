@@ -115,6 +115,11 @@ export class ServiceService {
 
   // updateEvent() {}
 
+
+  getAllImages(){
+    return this.http.get('https://www.mahadeeni.co.za/assets/images.php');
+  }
+
 }
 
 

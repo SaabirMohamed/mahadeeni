@@ -1,0 +1,31 @@
+<div id="scatter">
+  <figure id="desk">
+  <a (click)="videoClick()" id="estee"> 
+    <video
+    src="http://localhost:4200/assets/vidbg/about.mp4" controls poster="../../../assets/icon-256x256.png"
+     controls class="video" poster="../../../assets/icon-256x256.png">
+  
+  </video>
+  </a>
+  <a id="indre"> 
+  <video src="http://localhost:4200/assets/vidbg/posts.mp4" controls poster="../../../assets/icon-256x256.png">
+    
+  </video>
+  </a>
+  </figure>
+
+  <script>
+  (function(){
+  var desk = document.getElementById('desk');
+  var links = desk.getElementsByTagName('a');
+  for(var i=0;i<links.length;i++){  links[i].addEventListener('click',handler,false);
+  };
+  function handler(e){
+    e.preventDefault();
+    var x = e.target; 
+    var video = x.querySelector("video");
+    x.play();
+    x.parentNode.classList.add('playing');
+  };
+ })();
+  </script>

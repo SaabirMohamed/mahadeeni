@@ -4,6 +4,25 @@
     <h1 class="fadeInUp">Images and Video Gallery</h1>
     
     <div class="wrapper fadeInRight">
-     
-      
+        <div *ngIf="currentImage"  class="preview">
+            <h2 (click)="hidePreview()" style="color: red; cursor: pointer;">X</h2>
+            <img width="60%" src="http://www.mahadeeni.co.za/assets/{{currentImage}}" alt="">
+        </div>
+        <hr>
+        <hr>
+        <div *ngIf="images" class="imggrid fadeIn">
+            
+            <div *ngFor="let image of imagesArray;let i $index">
+                {{image | slice:0:image.length - 4 }}
+            <a id="image_{{i}}" (click)="showImage(i)">
+                <img src="http://www.mahadeeni.co.za/assets/{{image}}" alt="Sample photo">
+            </a>
+            </div>
+            
+        </div>
+
+
+      <!-- <app-videogallery></app-videogallery> -->
   </div>
+  
+</div>

@@ -13,17 +13,39 @@ import { Observable } from 'rxjs';
 export class GalleryComponent implements OnInit {
 
   images : Observable<Iimage[]>;
-  constructor(private svc: ServiceService) { }
+  imagesArray = [];
+  currentImage = '';
 
-  ngOnInit() {
-    //   this.svc.GetAllImages().subscribe(data => {
-    //   this.images = data;
-    // }
-    // );
+  constructor(private svc: ServiceService) { }
+  showImage(id) {
+    this.currentImage = id;
+    console.log(this.currentImage);
+    console.log(id);
+    
   }
 
- }
+  hidePreview(){
+    this.currentImage = '';
+  }
+  ngOnInit() {
+      this.svc.getAllImages().subscribe((data: Observable<Iimage[]>) => {
+      this.images = data;
+      this.makeResult();
+      
+    }
+    );
+  }
 
+  makeResult() {
+    Object.keys(this.images).map((key) => {
+    if (this.images[key].substr(this.images[key].length - 3) === 'png') {
+      console.log(this.images[key].substr(this.images[key].length - 3));
+      this.imagesArray.push(this.images[key]);
+    }
+    
+  }
+ }
+}
 export interface Iimage {
     id:string;
     name: string;

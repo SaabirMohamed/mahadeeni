@@ -4,7 +4,42 @@
   width: 80%;
 }
 img {
-  border: 1rem solid white;
+  border: 3px solid white;
   width: 200px;
   margin-top: 1rem;
+}
+
+.preview {
+  position: fixed;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /* background-color: #ccc; */
+  box-shadow: 20px 20px 16px 0px  rgba(0,0,0,0.3);
+
+  overflow: hidden;
+  flex-flow: column;
+}
+.preview > img {
+  width: 500px;
+  flex: 1;
+  
+}
+.preview > h2 {
+  position: absolute;
+  padding: 20px;
+
+}
+
+.imggrid { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+  align-items: center;
+  }
+.imggrid img {
+  cursor: pointer;
+  border: 5px solid #ccc;
+  box-shadow: 12px 12px 16px 0px  rgba(0,0,0,0.3);
+  max-width: 100%;
 }

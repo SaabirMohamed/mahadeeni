@@ -19,6 +19,7 @@ import { MfooterComponent } from './mfooter/mfooter.component';
     NaviComponent,
     ErrorpageComponent,
     MfooterComponent
+    
   ],
   imports: [
     BrowserModule,
