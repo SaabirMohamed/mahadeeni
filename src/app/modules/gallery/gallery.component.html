@@ -2,20 +2,46 @@
   
     <img class="fadeInUp" style="border-radius: 10px;" src="https://www.mahadeeni.co.za/assets/icon-256x256.png" alt="">  
     <h1 class="fadeInUp">Images and Video Gallery</h1>
+
+
+    
+        <!-- Video Sectio -->
+        <hr>
+        VIDEOS
+        <hr>
+        <div *ngIf="currentVideo"  class="preview">
+                <!-- <h2 (click)="hidePreviewVideo()" style="color: red; cursor: pointer;">X</h2> -->
+                <video controls src="http://www.mahadeeni.co.za/assets/galley/{{currentVideo}}"></video>
+            </div>
+        <div *ngIf="images" class="videolist imggrid fadeIn">
+            
+            <div *ngFor="let video of videoArray;let i $index">
+            <p>    {{video | slice:0:video.length - 4 }}</p>
+                
+            <a id="video_{{i}}" (click)="showVideo(i)">
+                 <video width="300" height="300" controls src="https://www.mahadeeni.co.za/assets/gallery/{{video}}"></video>
+                
+            </a>
+            
+            </div>
+            
+        </div>  <!-- Video Sectio END-->
+
     
     <div class="wrapper fadeInRight">
         <div *ngIf="currentImage"  class="preview">
             <h2 (click)="hidePreview()" style="color: red; cursor: pointer;">X</h2>
-            <img width="60%" src="http://www.mahadeeni.co.za/assets/{{currentImage}}" alt="">
+            <img width="60%" src="http://www.mahadeeni.co.za/assets/gallery/{{currentImage}}" alt="">
         </div>
         <hr>
+        IMAGES
         <hr>
         <div *ngIf="images" class="imggrid fadeIn">
             
             <div *ngFor="let image of imagesArray;let i $index">
                 {{image | slice:0:image.length - 4 }}
             <a id="image_{{i}}" (click)="showImage(i)">
-                <img src="http://www.mahadeeni.co.za/assets/{{image}}" alt="Sample photo">
+                <img src="http://www.mahadeeni.co.za/assets/gallery/{{image}}" alt="Sample photo">
             </a>
             </div>
             
