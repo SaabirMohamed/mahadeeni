@@ -42,9 +42,11 @@
         </app-homeedit>
     </section>
     
-    <section (click)="toggleSection('about')" class="panel">
-        <h2>about</h2>
-        <app-aboutedit *ngIf="showAbout"></app-aboutedit>
+    <section class="panel">
+        <h2  (click)="toggleSection('about')" >about</h2>
+        <app-aboutedit *ngIf="showAbout">
+          
+        </app-aboutedit>
     </section>
     <section (click)="toggleSection('contact')" class="panel"><h2>contact</h2></section>
     <section (click)="toggleSection('galley')" class="panel"><h2>gallery</h2></section>

@@ -57,7 +57,7 @@ export class GalleryComponent implements OnInit {
     if (this.images[key].substr(this.images[key].length - 3) === 'mp4') {
         this.videoArray.push(this.images[key]);
     }
-}
+  });
  }
 }
 export interface Iimage {
