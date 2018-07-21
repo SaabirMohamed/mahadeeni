@@ -42,7 +42,7 @@ export class DashComponent implements OnInit {
     switch (target) {
       case 'home':
       console.log(target);
-      if (confirm('open : home ?')) {
+      if (1===1) {
         this.hideAll();
         this.showHome = true;
       } else {

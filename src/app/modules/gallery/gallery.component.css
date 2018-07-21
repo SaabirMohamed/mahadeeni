@@ -9,6 +9,11 @@ img {
   margin-top: 1rem;
 }
 
+.filename {
+  font-family: Roboto;
+  color: #ccc;
+}
+
 .preview {
   position: fixed;
   top:50%;

@@ -23,6 +23,7 @@ export class ServiceService {
   posts: Observable<any>;
   eventsUrl = '/events';
   events: Observable<any>;
+  banners: Observable<any>;
 
   constructor(private afs: AngularFirestore , private http: HttpClient) { }
 
@@ -118,6 +119,14 @@ export class ServiceService {
 
   getAllImages(){
     return this.http.get('https://www.mahadeeni.co.za/assets/images.php');
+  }
+
+  getAllBanners()
+  {
+    
+      this.banners = this.afs.collection('banner').snapshotChanges();
+      return this.banners;
+    
   }
 
 }

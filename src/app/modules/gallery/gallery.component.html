@@ -7,7 +7,7 @@
     
         <!-- Video Sectio -->
         <hr>
-        VIDEOS
+        <h4>VIDEOS</h4>
         <hr>
         <div *ngIf="currentVideo"  class="preview">
                 <!-- <h2 (click)="hidePreviewVideo()" style="color: red; cursor: pointer;">X</h2> -->
@@ -16,7 +16,7 @@
         <div *ngIf="images" class="videolist imggrid fadeIn">
             
             <div *ngFor="let video of videoArray;let i $index">
-            <p>    {{video | slice:0:video.length - 4 }}</p>
+            <p class="filename">{{video | slice:0:video.length - 4 }}</p>
                 
             <a id="video_{{i}}" (click)="showVideo(i)">
                  <video width="300" height="300" controls src="https://www.mahadeeni.co.za/assets/gallery/{{video}}"></video>
@@ -34,12 +34,12 @@
             <img width="60%" src="http://www.mahadeeni.co.za/assets/gallery/{{currentImage}}" alt="">
         </div>
         <hr>
-        IMAGES
+        <h4>IMAGES</h4>
         <hr>
         <div *ngIf="images" class="imggrid fadeIn">
             
             <div *ngFor="let image of imagesArray;let i $index">
-                {{image | slice:0:image.length - 4 }}
+                <p class="filename">{{image | slice:0:image.length - 4 }}</p>
             <a id="image_{{i}}" (click)="showImage(i)">
                 <img src="http://www.mahadeeni.co.za/assets/gallery/{{image}}" alt="Sample photo">
             </a>
