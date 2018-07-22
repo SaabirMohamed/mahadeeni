@@ -1,29 +1,5 @@
 
 
-<header id="page-header">
-    <!-- <div class="list" *ngFor="let banner of highlightedContentResult | async">
-        <h5>{{banner.description}}</h5>
-        <a [routerLink]="banner.action"><img src="../../../assets/{{ banner.image }}" alt="{{banner.image}}"></a>
-     </div> -->
-     <div *ngIf="bannerloading" >
-       <img class="img" src="https://www.mahadeeni.co.za/assets/icon-256x256.png" alt="">
-       <h2 class="msg">loading content...</h2>
-     </div>
-
-  <div class="logo" >
-    <!-- <img src="https://s22.postimg.cc/z1kxtbp4h/logo-dark-187x32.png" alt="logo" /> -->
-    <img style="transform: translateY(-22px);padding-bottom: 10px;width: 100%; height: 500px;"  class="fadeInUp" [src]="bannerimage" alt="">
-  </div>
-  <!-- <div id="header-heading">
-    <h1 style="padding: 10px; display: block; margin:10px;">Event</h1>
-    <p>Launch Event</p>
-  </div> -->
-  <!-- <div id="header-menu">
-    <button>Gallery</button>
-    <button>video</button>
-  </div> -->
-</header>
-
 <main>
   <section class="main-section">
     <!-- <header  class="main-section-heading">
@@ -42,60 +18,31 @@
         <div>
           <img width="200" height="220" src="https://cdn4.iconfinder.com/data/icons/online-education-8/500/online-education-study_11-2-512.png" alt="cube" />
         </div>
-        <h4>Section Heading...</h4>
-        <h6>subline heading</h6>
-        <p>are description....</p>
+        <h4>Madressa Classes</h4>
+        <h6>Kids and Adults</h6>
+        <p>Quran, tajweed and memorisation</p>
       </div>
       <div class="card">
         <div>
           <img width="200" height="220" src="http://www.innomag.no/wp-content/uploads/people-304353_960_720.png" alt="brush" />
         </div>
         <h4>COMMUNITY EVENTS</h4>
+        <h6>Mass Iftaar, Meet and greet, Arabic and Quraan Classes</h6>
+        <p>Mahadeeni and IOU offer you the oppertunity to gain a full acredited education and no cost ... all systems are online.</p>
+      </div>
+      <div class="card">
+        <div>
+          <img width="200" height="220" src="../../../assets/icons/lab.png" alt="brush" />
+        </div>
+        <h4>Student Exam and Study lab</h4>
         <h6>Education, University , Arabic and Quraan Classes</h6>
         <p>Mahadeeni and IOU offer you the oppertunity to gain a full acredited education and no cost ... all systems are online.</p>
       </div>
+      
+        
     </div>
   </section>
 
-  <!-- staff section starts here -->
 
-  <section class="main-section">
-    <header class="main-section-heading">
-      <h2>Out Team</h2>
-      <p>Learn more </p>
-    </header>
-    <div class="cards-container">
-      <div class="card">
-        <div>
-          <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn3.vectorstock.com%2Fi%2F1000x1000%2F40%2F27%2Fmuslim-women-wearing-hijab-icon-simple-style-vector-12034027.jpg&imgrefurl=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Fmuslim-women-wearing-hijab-icon-simple-style-vector-12034027&docid=UabUoMyoS90DcM&tbnid=PPRWlj8YpdjxoM%3A&vet=10ahUKEwiIuu_q1KDcAhUEBSwKHRJtDpYQMwhjKCEwIQ..i&w=1000&h=1080&bih=627&biw=1309&q=social%20media%20muslimah%20icon&ved=0ahUKEwiIuu_q1KDcAhUEBSwKHRJtDpYQMwhjKCEwIQ&iact=mrc&uact=8" class="person-photo" alt="John Doe photo" />
-        </div>
-        <h4 class="person-name">NAME</h4>
-        <h4 class="position">POSITION</h4>
-        <p>
-            short description here...
-          </p>
-      </div>
-      <div class="card">
-        <div>
-          <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn3.vectorstock.com%2Fi%2F1000x1000%2F40%2F27%2Fmuslim-women-wearing-hijab-icon-simple-style-vector-12034027.jpg&imgrefurl=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Fmuslim-women-wearing-hijab-icon-simple-style-vector-12034027&docid=UabUoMyoS90DcM&tbnid=PPRWlj8YpdjxoM%3A&vet=10ahUKEwiIuu_q1KDcAhUEBSwKHRJtDpYQMwhjKCEwIQ..i&w=1000&h=1080&bih=627&biw=1309&q=social%20media%20muslimah%20icon&ved=0ahUKEwiIuu_q1KDcAhUEBSwKHRJtDpYQMwhjKCEwIQ&iact=mrc&uact=8" class="person-photo" alt="July Mao photo" />
-        </div>
-        <h4 class="person-name">NAME</h4>
-        <h4 class="position">POSITION</h4>
-        <p>
-          short description here...
-        </p>
-      </div>
-      <div class="card">
-        <div>
-          <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn3.vectorstock.com%2Fi%2F1000x1000%2F40%2F27%2Fmuslim-women-wearing-hijab-icon-simple-style-vector-12034027.jpg&imgrefurl=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Fmuslim-women-wearing-hijab-icon-simple-style-vector-12034027&docid=UabUoMyoS90DcM&tbnid=PPRWlj8YpdjxoM%3A&vet=10ahUKEwiIuu_q1KDcAhUEBSwKHRJtDpYQMwhjKCEwIQ..i&w=1000&h=1080&bih=627&biw=1309&q=social%20media%20muslimah%20icon&ved=0ahUKEwiIuu_q1KDcAhUEBSwKHRJtDpYQMwhjKCEwIQ&iact=mrc&uact=8" class="person-photo" alt="Bernard Show photo" />
-        </div>
-        <h4 class="person-name">NAME</h4>
-        <h4 class="position">POSITION</h4>
-        <p>
-            short description here...
-          </p>
-      </div>
-    </div>
-  </section>
-   <!-- staff section ends here -->
+
 </main>

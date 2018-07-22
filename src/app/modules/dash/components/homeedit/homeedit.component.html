@@ -1,6 +1,8 @@
 <!-- main app container -->
+<p class="stats">
 form status : {{homeForm.valid}} <br>
-banners: 
+banners total : {{ bannerPayload.length }} 
+</p> 
 
     <div class="container fadeIn">
         <div class="row">
@@ -9,33 +11,33 @@ banners:
                 <form [formGroup]="homeForm" (ngSubmit)="onSubmit()">
                     <div class="form-group">
                         <label>Title</label> <br>
-                        <input type="text" formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
-                        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                        <input type="text" formControlName="title" class="form-control"  />
+                        <!-- <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
                             <div *ngIf="f.title.errors.required">First Name is required</div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="form-group">
                         <label>Description</label> <br>
-                        <input type="text" formControlName="desc" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.desc.errors }" />
-                        <div *ngIf="submitted && f.desc.errors" class="invalid-feedback">
+                        <input type="text" formControlName="desc" class="form-control"  />
+                        <!-- <div *ngIf="submitted && f.desc.errors" class="invalid-feedback">
                             <div *ngIf="f.desc.errors.required">Last Name is required</div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="form-group">
                         <label>image</label> <br>
-                        <input type="text" formControlName="image" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-                        <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
+                        <input type="text" formControlName="image" class="form-control"  />
+                        <!-- <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
                             <div *ngIf="f.desc.errors.required">image is required</div>
                             <div *ngIf="f.image.errors.image">image must be a valid image address</div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="form-group">
                         <label>Action</label> <br>
-                        <input type="link" formControlName="link" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.link.errors }" />
-                        <div *ngIf="submitted && f.link.errors" class="invalid-feedback">
-                            <div *ngIf="f.link.errors.required">link is required</div>
-                            <div *ngIf="f.link.errors.minlength">link must be at least 6 characters</div>
-                        </div>
+                        <input type="link" formControlName="link" class="form-control"  />
+                            <!-- <div *ngIf="submitted && f.link.errors" class="invalid-feedback">
+                                <div *ngIf="f.link.errors.required">link is required</div>
+                                <div *ngIf="f.link.errors.minlength">link must be at least 6 characters</div>
+                            </div> -->
                     </div>
                     <div class="form-group">
                         <button [disabled]="loading" class="btn btn-primary">Update</button>
@@ -52,36 +54,36 @@ banners:
                 <form [formGroup]="bannerForm" (ngSubmit)="onSubmit()">
                     <div class="form-group">
                         <label>Banner Title</label> <br>
-                        <input type="text" formControlName="bannerTitle" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bannerTitle.errors }" />
-                        <div *ngIf="submitted && f.bannerTitle.errors" class="invalid-feedback">
-                            <div *ngIf="f.bannerTitle.errors.required">First Name is required</div>
+                        <input type="text" formControlName="bannerTitle" class="form-control"  />
+                        <div *ngIf="submitted" class="invalid-feedback">
+                            <!-- <div *ngIf="b.bannerTitle.errors.required">First Name is required</div> -->
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Banner Description</label> <br>
-                        <input type="text" formControlName="bannerDesc" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bannerDesc.errors }" />
-                        <div *ngIf="submitted && f.bannerDesc.errors" class="invalid-feedback">
-                            <div *ngIf="f.bannerDesc.errors.required">Last Name is required</div>
+                        <input type="text" formControlName="bannerDesc" class="form-control" />
+                        <div *ngIf="submitted" class="invalid-feedback">
+                            <!-- <div>Last Name is required</div> -->
                         </div>
                     </div>
                     <div class="form-group">
                         <label>A link ro an image]</label> <br>
-                        <input type="text" formControlName="bannerImage" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-                        <div *ngIf="submitted && f.bannerImage.errors" class="invalid-feedback">
-                            <div *ngIf="f.desc.errors.required">bannerImage is required</div>
-                            <div *ngIf="f.bannerImage.errors.bannerImage">bannerImage must be a valid image address</div>
-                        </div>
+                        <input type="text" formControlName="bannerImage" class="form-control" />
+                        <!-- <div *ngIf="submitted && b.bannerImage.errors" class="invalid-feedback">
+                            <div *ngIf="b.desc.errors.required">bannerImage is required</div>
+                            <div *ngIf="b.bannerImage.errors.bannerImage">bannerImage must be a valid image address</div>
+                        </div> -->
                     </div>
                     <div class="form-group">
                         <label>link</label> <br>
-                        <input type="link" formControlName="link" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.link.errors }" />
-                        <div *ngIf="submitted && f.link.errors" class="invalid-feedback">
-                            <div *ngIf="f.link.errors.required">link is required</div>
-                            <div *ngIf="f.link.errors.minlength">link must be at least 6 characters</div>
-                        </div>
+                        <input type="link" formControlName="link" class="form-control"  />
+                        <!-- <div *ngIf="submitted && b.link.errors" class="invalid-feedback">
+                            <div *ngIf="b.link.errors.required">link is required</div>
+                            <div *ngIf="b.link.errors.minlength">link must be at least 6 characters</div>
+                        </div> -->
                     </div>
                     <div class="form-group">
-                        <button [disabled]="loading" class="btn btn-primary">Add Banner</button>
+                        <button (click)="addBanner()"  [disabled]="loading" class="addBannerbtn">Add Banner</button>
 
                     </div>
                 </form>

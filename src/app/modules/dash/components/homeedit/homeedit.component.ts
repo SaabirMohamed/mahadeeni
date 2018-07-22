@@ -18,6 +18,7 @@ export class HomeeditComponent implements OnInit {
   loading: boolean;
   banners: any;
   bannerPayload = [];
+  bannerData: { image : '', description: '', action: ''}[];
   bannerIds = [];
 
 
@@ -44,6 +45,7 @@ export class HomeeditComponent implements OnInit {
   }
    // convenience getter for easy access to form fields
    get f() { return this.homeForm.controls; }
+   get b() { return this.bannerForm.controls; }
  
    onSubmit() {
        this.submitted = true;
@@ -57,6 +59,8 @@ export class HomeeditComponent implements OnInit {
    }
 
    getBanners() {
+    this.bannerIds = [];
+    this.bannerPayload = [];
     this.afs.collection('banner').snapshotChanges().subscribe( data => {
       for (let i = 0; i < data.length; i++) {
         this.bannerIds.push(data[i].payload.doc.id);         
@@ -64,7 +68,12 @@ export class HomeeditComponent implements OnInit {
       console.log(this.bannerIds);
     }); 
     this.afs.collection('banner').valueChanges().subscribe(data => {
-       data.forEach(element => {
+      for (let b = 0; b  < data.length; b++) {
+        const element = data[b];
+        console.log('ELEMENT VC' + element);
+        
+      } 
+      data.forEach((element: Ibanner) => {
          this.bannerPayload.push({
            image: element.image,
            description: element.description,
@@ -76,13 +85,35 @@ export class HomeeditComponent implements OnInit {
      
    }
 
+   addBanner() {
+      const bannerTitle = this.bannerForm.get('bannerTitle').value;
+      const  bannerImage = this.bannerForm.get('bannerImage').value;
+      const  bannerDesc = this.bannerForm.get('bannerDesc').value;
+      const  bannerLink = this.bannerForm.get('link').value;
+      if (bannerTitle && bannerDesc && bannerLink && bannerImage) {
+        this.afs.collection('banner').add({
+          title: bannerTitle,
+          image: bannerImage,
+          description: bannerDesc,
+          action: bannerLink,
+        });
+      } else {
+        return;
+      }
+      
+   }
+
    removeBanner(doc, index) {
-     console.log(index);
-     this.bannerIds.splice(index,1,this.bannerIds[index]);
-     this.bannerPayload.splice(index,1,this.bannerPayload[index]);
+     
       this.afs.collection('banner').doc(doc).delete();
       
 
    }
 
+}
+
+export interface Ibanner {
+  image:string;
+  description: string;
+  action: string;
 }

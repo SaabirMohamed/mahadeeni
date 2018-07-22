@@ -115,6 +115,9 @@
     width: 25%;
     margin-right: 60px;
   }
+  .card img {
+    border-radius: 40px;
+  }
   
   .card:last-child {
     margin-right: 0;
