@@ -31,22 +31,20 @@ export class HomeeditComponent implements OnInit {
       desc: ['', Validators.required],
       image: ['', Validators.required],
       link: ['', Validators.required],
-      
-           
+
       });
     this.bannerForm = this.fb.group({
       bannerTitle: ['', Validators.required],
       bannerDesc: ['', Validators.required],
       bannerImage: ['', Validators.required],
       link: ['', Validators.required],
-      
-           
+
       });
   }
    // convenience getter for easy access to form fields
    get f() { return this.homeForm.controls; }
    get b() { return this.bannerForm.controls; }
- 
+
    onSubmit() {
        this.submitted = true;
 
@@ -63,26 +61,26 @@ export class HomeeditComponent implements OnInit {
     this.bannerPayload = [];
     this.afs.collection('banner').snapshotChanges().subscribe( data => {
       for (let i = 0; i < data.length; i++) {
-        this.bannerIds.push(data[i].payload.doc.id);         
+        this.bannerIds.push(data[i].payload.doc.id);
       }
       console.log(this.bannerIds);
-    }); 
+    });
     this.afs.collection('banner').valueChanges().subscribe(data => {
       for (let b = 0; b  < data.length; b++) {
         const element = data[b];
         console.log('ELEMENT VC' + element);
-        
-      } 
+
+      }
       data.forEach((element: Ibanner) => {
          this.bannerPayload.push({
            image: element.image,
            description: element.description,
            action: element.action
          });
-         
+
        });
      });
-     
+
    }
 
    addBanner() {

@@ -4,6 +4,8 @@ import { SharedModule } from '../../shared.module';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { GlobalsharedModule } from '../../shared/globalshared/globalshared.module';
+import { DailytipsComponent } from './dailytips/dailytips.component';
+import { LinksComponent } from './links/links.component';
 
 @NgModule({
   imports: [
@@ -12,6 +14,6 @@ import { GlobalsharedModule } from '../../shared/globalshared/globalshared.modul
     SharedModule,
     GlobalsharedModule
   ],
-  declarations: [HomeComponent]
+  declarations: [HomeComponent, DailytipsComponent, LinksComponent]
 })
 export class HomeModule { }

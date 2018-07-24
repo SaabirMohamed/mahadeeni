@@ -96,10 +96,10 @@ body {
   vertical-align: middle;
 }
 .blog-card .details .author:before {
-  content: "\f007";
+  /* content: "\f007"; */
 }
 .blog-card .details .date:before {
-  content: "\f133";
+  /* content: "\f133"; */
 }
 .blog-card .details .tags ul {
   list-style: none;
@@ -107,7 +107,7 @@ body {
   padding: 0;
 }
 .blog-card .details .tags ul:before {
-  content: "\f02b";
+  /* content: "\f02b"; */
 }
 .blog-card .details .tags li {
   display: inline-block;

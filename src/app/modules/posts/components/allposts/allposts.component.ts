@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
-
+import { faUser, faCalendar, faSeedling } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-allposts',
@@ -10,7 +10,9 @@ import { Observable } from 'rxjs';
 })
 export class AllpostsComponent implements OnInit {
   @Input('id') id: string;
-
+  faUser = faUser;
+  faCalendar = faCalendar;
+  faSeedling = faSeedling;
   posts: Observable<Ipost>[];
   currentIDs =  [];
    showDetail: boolean;

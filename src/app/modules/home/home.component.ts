@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   images: any;
 
   _db_path = '/banner';
+  _tips_path = "/dailytips"
   highlightedContentResult: Observable<any[]>;
   imageNames = [];
   bannerimages = [];

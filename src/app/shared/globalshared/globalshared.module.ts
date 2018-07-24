@@ -46,6 +46,7 @@ import { environment } from '../../../environments/environment';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { QuillModule } from 'ngx-quill';
 import {AdmindashComponent } from '../../admindash/admindash.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   imports: [
     CommonModule,
@@ -53,12 +54,13 @@ import {AdmindashComponent } from '../../admindash/admindash.component';
     FormsModule,
     ReactiveFormsModule,
     QuillModule,
+    FontAwesomeModule,
     AngularFireModule.initializeApp(environment.fbconf, 'mahadeeni'),
     AgmCoreModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule,
     MatTableModule, MatFormFieldModule, MatPaginatorModule, MatSortModule
   ],
   declarations: [EvtableComponent, AdmindashComponent],
-  exports: [QuillModule, ReactiveFormsModule,
+  exports: [FontAwesomeModule, QuillModule, ReactiveFormsModule,
            FormsModule, HttpClientModule,
            AgmCoreModule, MatFormFieldModule,
            EvtableComponent, AngularFireModule, AdmindashComponent],
