@@ -9,6 +9,7 @@ import {Ilinks} from '../dailytips/dailytips.component';
 })
 export class LinksComponent implements OnInit {
   linksPayload = [];
+  currentPreview = '';
   constructor(private afs: AngularFirestore) { }
 
   ngOnInit() {
@@ -16,13 +17,19 @@ export class LinksComponent implements OnInit {
   }
 
   getLinks() {
-    this.afs.collection('/homeLinks').valueChanges().subscribe((data: Ilinks[]) => {
-      for (let b = 0; b  < data.length; b++) {
-        const element = data[b];
-        this.linksPayload.push(element);
-      }
-      console.log('payload size = ' + this.linksPayload.length);
+    this.afs.collection('/links').valueChanges().subscribe((data: Ilinks[]) => {
+      console.log(data);
+      this.linksPayload = data;
+
      });
+  }
+
+  showPreview(imagepath) {
+    this.currentPreview = imagepath;
+  }
+
+  hidePreview() {
+    this.currentPreview = '';
   }
 
 }

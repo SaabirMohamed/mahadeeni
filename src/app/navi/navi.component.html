@@ -27,27 +27,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <section   class="top-nav">
     <div  style="padding: 10px"  class="logo">
-        <img width="80" src="../../assets/navicon.png" alt="Mahadeeni Logo">
+        <img (click)="mobileClickOpen()" width="80" src="../../assets/navicon.png" alt="Mahadeeni Logo">
     </div>
     <input id="menu-toggle" type="checkbox" />
     <label class='menu-button-container' for="menu-toggle">
     <div class='menu-button'></div>
   </label>
-    <ul class="menu">
-        <li><a (click)="clicker('home')" color="primary" style="color: #33a1c9; " routerLink="/home">home</a></li>
+    <ul id="menu" class="menu">
+        <li (click)="mobileClickClose()"><a (click)="clicker('home')" color="primary" style="color: #33a1c9; " routerLink="/home">home</a></li>
 
-        <li><a (click)="clicker('projects')" color="primary" style="color: #33a1c9; " routerLink="/projects">projects</a></li>
-        <li><a (click)="clicker('events')" color="primary" style="color: #33a1c9; " routerLink="/events">Events</a></li>
-        <li><a (click)="clicker('counselling')" color="primary" style="color: #33a1c9; " routerLink="/counselling">counselling</a></li>
-
-
+        <li  (click)="mobileClickClose()"><a (click)="clicker('projects')" color="primary" style="color: #33a1c9; " routerLink="/projects">projects</a></li>
+        <li  (click)="mobileClickClose()"><a (click)="clicker('events')" color="primary" style="color: #33a1c9; " routerLink="/events">Events</a></li>
+        <li  (click)="mobileClickClose()"><a (click)="clicker('counselling')" color="primary" style="color: #33a1c9; " routerLink="/counselling">counselling</a></li>
 
 
-        <li><a (click)="clicker('posts')" color="primary" style="color: #33a1c9; " routerLink="/posts">posts</a></li>
-        <li><a (click)="clicker('gallery')" color="primary" style="color: #33a1c9; " routerLink="/gallery">gallery</a></li>
-        <li><a (click)="clicker('contact')" color="primary" style="color: #33a1c9; " routerLink="/contact">contact</a></li>
-        <li><a (click)="clicker('about')" color="primary" style="color: #33a1c9; " routerLink="/about">About</a></li>
-        <li><a (click)="clicker('posts')" color="primary" style="color: #33a1c9; " routerLink="/dash"><img style="opacity: .3; display: none" width="20" src="../../assets/icons/db.svg" alt=""></a></li>
+
+
+        <li  (click)="mobileClickClose()"><a (click)="clicker('posts')" color="primary" style="color: #33a1c9; " routerLink="/posts">posts</a></li>
+        <li  (click)="mobileClickClose()"><a (click)="clicker('gallery')" color="primary" style="color: #33a1c9; " routerLink="/gallery">gallery</a></li>
+        <li  (click)="mobileClickClose()"><a (click)="clicker('contact')" color="primary" style="color: #33a1c9; " routerLink="/contact">contact</a></li>
+        <li  (click)="mobileClickClose()"><a (click)="clicker('about')" color="primary" style="color: #33a1c9; " routerLink="/about">About</a></li>
+        <li  (click)="mobileClickClose()"><a (click)="clicker('posts')" color="primary" style="color: #33a1c9; " routerLink="/dash"><img style="opacity: .3; display: none" width="20" src="../../assets/icons/db.svg" alt=""></a></li>
     </ul>
   </section>
 </nav>

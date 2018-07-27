@@ -1,39 +1,11 @@
 .dailyBanner {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    
-    border: 5px solid #fff;
-  }
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-family: Roboto;
+}
 
-  .dailyBanner div {
-    padding:20px;
-    overflow: hidden;
-    
-  }
-
-
-  .tibb, .hadith, .aya {
-    animation-name: slideInLeft;
-    animation-duration: 500ms;
-    animation-timing-function: ease-in-out;
-    font-family: Roboto;
-    color: #fff;
-    font-size: 1rem;
-    text-align: center;
-
-  }
-
-  @keyframes slideInLeft {
-    0% {opacity: 0; transform: translateX(50px)}
-    100% {opacity: 1; transform: translateX(0)}
-  }
-
-  .readButton {
-    padding: 10px 20px;
-    color: white;
-    background-color: lightseagreen;
-    border: none;
-    box-shadow: 0px 3px 13px #666;
-  }
+.tipImage {
+  width: 300px;
+  height: 350px;;
+}

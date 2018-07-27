@@ -4,12 +4,11 @@
         <div class="tibb" *ngFor="let tip of tipPayload;let i $index">
             <h2>{{tip.title}}</h2>
               <div class="dailycontent">
-                <img src="../../../assets/{{tip.image}}" alt="">
+                <img class="tipImage" src="../../../assets/{{tip.image}}" alt="">
                 <p>{{tip.tiptext}}</p>
-                <button (click)="loadTip(tip.action)" class="readButton">READ</button>
+                <!-- <button (click)="loadTip(tip.action)" class="readButton">READ</button> -->
               </div>
             </div>
     </div>
   </main>
 
- 

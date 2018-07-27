@@ -12,13 +12,15 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule } from '@angular/material';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
 import { MfooterComponent } from './mfooter/mfooter.component';
+import { InnerfooterComponent } from './innerfooter/innerfooter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NaviComponent,
     ErrorpageComponent,
-    MfooterComponent
+    MfooterComponent,
+    InnerfooterComponent
     
   ],
   imports: [

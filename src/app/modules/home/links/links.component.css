@@ -1,0 +1,25 @@
+* {
+  font-family: Roboto;
+  color: #000000;
+  text-shadow: 1px 1px 0px #ccc;
+}
+.blocks {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.block {
+  flex: 1;
+  align-content: center;
+  justify-content: center;
+  width: 300px;
+  height: 350px;
+
+}
+
+img {
+  width: 50%;
+  border: 5px solid #FFF
+}

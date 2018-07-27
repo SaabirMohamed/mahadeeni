@@ -24,6 +24,15 @@ export class NaviComponent {
       this.bgchange.emit(bgname);
       this.resetScroll();
   }
+  mobileClickClose() {
+     const menu = document.getElementById('menu');
+     menu.setAttribute('style', 'transform: translateX(-300px)');
+  }
+
+  mobileClickOpen() {
+    const menu = document.getElementById('menu');
+     menu.setAttribute('style', 'transform: translateX(0)');
+  }
 
   constructor(private elem: ElementRef, private breakpointObserver: BreakpointObserver) {
     this.bgchange.emit('home');
