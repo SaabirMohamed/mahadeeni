@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, HostListener, ElementRef , ViewChild, ViewContainerRef} from '@angular/core';
+import { OnInit, Component, Output, EventEmitter, HostListener, ElementRef , ViewChild, ViewContainerRef} from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
   templateUrl: './navi.component.html',
   styleUrls: ['./navi.component.css']
 })
-export class NaviComponent {
+export class NaviComponent implements OnInit {
   @Output() bgchange: EventEmitter<any> = new EventEmitter();
   @ViewChild('navsection', {read: ViewContainerRef}) navsection: ViewContainerRef;
   isScrolling: boolean;
@@ -62,6 +62,9 @@ export class NaviComponent {
     window.scrollTo(0, 0);
   }
 
-
+   ngOnInit() {
+    this.mobileClickClose();
+  }
 
   }
+

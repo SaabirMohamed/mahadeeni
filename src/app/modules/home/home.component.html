@@ -1,4 +1,28 @@
 
+<!--  BANNER SLIDER  -->
+<div class="banner">
+  <div class="row fullwidth">
+    <div class="col-md-12">
+      <ul class="bannerSlider">
+        <!--  1. slide  -->
+        <li class="slide">
+          <a [href]="bannerAction">
+            <div class="slide__text">
+              <h2>{{bannerTitle}}</h2>
+            </div>
+            <div class="slide__image">
+              <img [src]="bannerimage" alt="" />
+            </div>
+          </a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- <img [src]="bannerimage" alt=""> -->
 <app-dailytips></app-dailytips>
 <!-- from database highlighted items END-->
 
